@@ -14,9 +14,8 @@ import { Testimonials } from '@/components/Testimonials';
 import { ContactSection } from '@/components/ContactSection';
 import { ProductModal } from '@/components/ProductModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
-import { SecurityGuard } from '@/components/SecurityGuard';
 import { Footer } from '@/components/Footer';
-import { Sparkles, Eye } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -39,30 +38,16 @@ export default function HomePage() {
   return (
     <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#0F1215' }}>
       
-      {/* Módulo de Ciberseguridad Anti-Robo de Imágenes */}
-      <SecurityGuard />
-
-      {/* Banner Identificador de Propuesta 2 */}
-      <div style={{
-        backgroundColor: '#121619',
-        color: '#ffffff',
-        fontSize: '0.85rem',
-        fontWeight: 600,
-        padding: '0.5.rem 1rem',
-        textAlign: 'center',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '0.5rem',
-        letterSpacing: '0.04em',
-        borderBottom: '1px solid #10B981'
-      }}>
-        <Sparkles size={14} color="#10B981" />
-        <span>PROPUESTA 2: <strong>Vanguardia Moderna & Glassmorphism Élite</strong> • Maderas Melgar</span>
-      </div>
-
-      {/* Header Corporativo */}
-      <Header whatsappNumber={APP_CONFIG.whatsappNumber} />
+      {/* Header Corporativo con Banner Integrado */}
+      <Header 
+        whatsappNumber={APP_CONFIG.whatsappNumber}
+        bannerText={
+          <>
+            <Sparkles size={14} color="#10B981" />
+            <span>PROPUESTA 2: <strong>Vanguardia Moderna & Glassmorphism Élite</strong> • Maderas Melgar</span>
+          </>
+        }
+      />
 
       {/* Secciones Principales de Propuesta 2 */}
       <main style={{ flexGrow: 1 }}>
@@ -82,10 +67,10 @@ export default function HomePage() {
         {/* 2. Propuestas de Valor */}
         <ValueProps />
 
-        {/* 3. Simulador de Espacios & Ambientes en Vivo (NUEVO) */}
+        {/* 3. Simulador de Espacios & Ambientes en Vivo */}
         <RoomSimulator whatsappNumber={APP_CONFIG.whatsappNumber} />
 
-        {/* 4. Catálogo Moderno con Buscador Instantáneo y Cotizador (NUEVO) */}
+        {/* 4. Catálogo Moderno con Buscador Instantáneo y Cotizador */}
         <ModernProductCatalog 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
