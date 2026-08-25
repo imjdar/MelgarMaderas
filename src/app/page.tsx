@@ -5,8 +5,7 @@ import { APP_CONFIG } from '@/services/configService';
 import { Product } from '@/types';
 import { Header } from '@/components/Header';
 import { ModernHero } from '@/components/ModernHero';
-import { ValueProps } from '@/components/ValueProps';
-import { CraftsmanshipSection } from '@/components/CraftsmanshipSection';
+import { WoodSpecSheet } from '@/components/WoodSpecSheet';
 import { ModernProductCatalog } from '@/components/ModernProductCatalog';
 import { CopyrightNotice } from '@/components/CopyrightNotice';
 import { AboutBrand } from '@/components/AboutBrand';
@@ -27,20 +26,20 @@ export default function HomePage() {
   };
 
   return (
-    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#101316' }}>
+    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#0B0D0E' }}>
       
       {/* Header Corporativo para Propuesta 2 */}
       <Header 
         whatsappNumber={APP_CONFIG.whatsappNumber}
         bannerText={
           <>
-            <Sparkles size={14} color="#D4AF37" />
+            <Sparkles size={14} color="#F59E0B" />
             <span>PROPUESTA 2: <strong>Arquitectura Contemporánea & Maderería de Vanguardia</strong> • melgarmaderas.com.ec</span>
           </>
         }
       />
 
-      {/* Secciones Informativas de Propuesta 2 */}
+      {/* Secciones Informativas Únicas de Propuesta 2 */}
       <main style={{ flexGrow: 1 }}>
         
         {/* 1. Hero Moderno Arquitectónico */}
@@ -52,28 +51,25 @@ export default function HomePage() {
           onContactWhatsApp={handleContactWhatsApp}
         />
 
-        {/* 2. Propuestas de Valor */}
-        <ValueProps />
+        {/* 2. Módulo Técnico Interactivo de Maderas Nobles (EXCLUSIVO PROPUESTA 2) */}
+        <WoodSpecSheet />
 
-        {/* 3. Técnica Artesanal & Secado al Horno (8-10%) */}
-        <CraftsmanshipSection />
-
-        {/* 4. Catálogo Moderno Protegido con Marca de Agua */}
+        {/* 3. Muestrario Bento Grid Arquitectónico Protegido con Marca de Agua */}
         <ModernProductCatalog 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
         />
 
-        {/* 5. Protección Legal de Propiedad Intelectual */}
+        {/* 4. Protección Legal de Propiedad Intelectual */}
         <CopyrightNotice />
 
-        {/* 6. Acerca de Maderas Melgar */}
+        {/* 5. Acerca de Maderas Melgar */}
         <AboutBrand />
 
-        {/* 7. Testimonios */}
+        {/* 6. Testimonios */}
         <Testimonials />
 
-        {/* 8. Contacto & Ubicación Showroom en Quito */}
+        {/* 7. Contacto & Ubicación Showroom en Quito */}
         <ContactSection 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           locationAddress={APP_CONFIG.location.addressLine}
