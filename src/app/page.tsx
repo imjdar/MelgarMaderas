@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import { APP_CONFIG } from '@/services/configService';
 import { Product } from '@/types';
 import { Header } from '@/components/Header';
-import { EditorialHero } from '@/components/EditorialHero';
+import { ModernHero } from '@/components/ModernHero';
 import { ValueProps } from '@/components/ValueProps';
 import { CraftsmanshipSection } from '@/components/CraftsmanshipSection';
-import { InformationalCatalog } from '@/components/InformationalCatalog';
+import { ModernProductCatalog } from '@/components/ModernProductCatalog';
 import { CopyrightNotice } from '@/components/CopyrightNotice';
 import { AboutBrand } from '@/components/AboutBrand';
 import { Testimonials } from '@/components/Testimonials';
@@ -16,35 +16,35 @@ import { ProductModal } from '@/components/ProductModal';
 import { SecurityGuard } from '@/components/SecurityGuard';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { Footer } from '@/components/Footer';
-import { Award } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const handleContactWhatsApp = () => {
-    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Deseo solicitar asesoría y cotización personalizada para mobiliario a medida en Quito.`;
+    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Me gustaría consultar sobre cotizaciones a medida para proyectos arquitectónicos en Quito.`;
     window.open(`https://wa.me/${APP_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
-    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#FAF8F5' }}>
+    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#101316' }}>
       
-      {/* Header Corporativo Informativo */}
+      {/* Header Corporativo para Propuesta 2 */}
       <Header 
         whatsappNumber={APP_CONFIG.whatsappNumber}
         bannerText={
           <>
-            <Award size={14} color="#C59B27" />
-            <span>PROPUESTA 1: <strong>Atelier Herencia & Elegancia Clásica</strong> • melgarmaderas.com.ec</span>
+            <Sparkles size={14} color="#D4AF37" />
+            <span>PROPUESTA 2: <strong>Arquitectura Contemporánea & Maderería de Vanguardia</strong> • melgarmaderas.com.ec</span>
           </>
         }
       />
 
-      {/* Contenido Editorial Informativo */}
+      {/* Secciones Informativas de Propuesta 2 */}
       <main style={{ flexGrow: 1 }}>
         
-        {/* 1. Hero Editorial de Lujo */}
-        <EditorialHero 
+        {/* 1. Hero Moderno Arquitectónico */}
+        <ModernHero 
           onExploreCatalog={() => {
             const catalogEl = document.getElementById('catalogo');
             if (catalogEl) catalogEl.scrollIntoView({ behavior: 'smooth' });
@@ -52,14 +52,14 @@ export default function HomePage() {
           onContactWhatsApp={handleContactWhatsApp}
         />
 
-        {/* 2. Propuestas de Valor de Ebanistería */}
+        {/* 2. Propuestas de Valor */}
         <ValueProps />
 
-        {/* 3. Proceso Artesanal & Secado al Horno (8-10%) */}
+        {/* 3. Técnica Artesanal & Secado al Horno (8-10%) */}
         <CraftsmanshipSection />
 
-        {/* 4. Catálogo Informativo Protegido con Marca de Agua */}
-        <InformationalCatalog 
+        {/* 4. Catálogo Moderno Protegido con Marca de Agua */}
+        <ModernProductCatalog 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
         />
@@ -70,7 +70,7 @@ export default function HomePage() {
         {/* 6. Acerca de Maderas Melgar */}
         <AboutBrand />
 
-        {/* 7. Opiniones de Clientes */}
+        {/* 7. Testimonios */}
         <Testimonials />
 
         {/* 8. Contacto & Ubicación Showroom en Quito */}
@@ -81,7 +81,7 @@ export default function HomePage() {
 
       </main>
 
-      {/* Footer Corporativo con Enlaces SEO */}
+      {/* Footer Corporativo */}
       <Footer 
         companyName={APP_CONFIG.companyName}
         whatsappNumber={APP_CONFIG.whatsappNumber}
@@ -96,7 +96,7 @@ export default function HomePage() {
         />
       )}
 
-      {/* Protección de Seguridad & Clic Derecho */}
+      {/* Protección de Clic Derecho & Marca de Agua */}
       <SecurityGuard />
 
       {/* Botón Flotante WhatsApp */}
