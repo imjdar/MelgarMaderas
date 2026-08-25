@@ -4,71 +4,89 @@ import React, { useState } from 'react';
 import { APP_CONFIG } from '@/services/configService';
 import { Product } from '@/types';
 import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
+import { ModernHero } from '@/components/ModernHero';
 import { ValueProps } from '@/components/ValueProps';
-import { WoodComparator } from '@/components/WoodComparator';
-import { CraftTimeline } from '@/components/CraftTimeline';
-import { ProductCatalog } from '@/components/ProductCatalog';
+import { RoomSimulator } from '@/components/RoomSimulator';
+import { ModernProductCatalog } from '@/components/ModernProductCatalog';
+import { MultiQuoteCart } from '@/components/MultiQuoteCart';
 import { AboutBrand } from '@/components/AboutBrand';
 import { Testimonials } from '@/components/Testimonials';
 import { ContactSection } from '@/components/ContactSection';
 import { ProductModal } from '@/components/ProductModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { Footer } from '@/components/Footer';
-import { Award } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [cart, setCart] = useState<Product[]>([]);
+
+  const handleAddToCart = (product: Product) => {
+    if (!cart.some(p => p.id === product.id)) {
+      setCart([...cart, product]);
+    }
+  };
+
+  const handleRemoveFromCart = (productId: string) => {
+    setCart(cart.filter(p => p.id !== productId));
+  };
+
+  const handleClearCart = () => {
+    setCart([]);
+  };
 
   return (
-    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#0F1215' }}>
       
-      {/* Header Corporativo con Banner Integrado para Propuesta 1 */}
+      {/* Header Corporativo con Banner Integrado para Propuesta 2 */}
       <Header 
         whatsappNumber={APP_CONFIG.whatsappNumber}
         bannerText={
           <>
-            <Award size={14} color="#C59B27" />
-            <span>PROPUESTA 1: <strong>Atelier Clásico & Cálida Nobleza</strong> • Maderas Melgar</span>
+            <Sparkles size={14} color="#10B981" />
+            <span>PROPUESTA 2: <strong>Vanguardia Moderna & Glassmorphism Élite</strong> • Maderas Melgar</span>
           </>
         }
       />
 
-      {/* Secciones Principales de Propuesta 1 */}
+      {/* Secciones Principales de Propuesta 2 */}
       <main style={{ flexGrow: 1 }}>
         
-        {/* 1. Hero Editorial */}
-        <Hero 
+        {/* 1. Hero Moderno Cinematográfico */}
+        <ModernHero 
           onExploreCatalog={() => {
             const catalogEl = document.getElementById('catalogo');
             if (catalogEl) catalogEl.scrollIntoView({ behavior: 'smooth' });
+          }}
+          onExploreSimulator={() => {
+            const simEl = document.getElementById('simulador');
+            if (simEl) simEl.scrollIntoView({ behavior: 'smooth' });
           }}
         />
 
         {/* 2. Propuestas de Valor */}
         <ValueProps />
 
-        {/* 3. Comparador Interactivo de Maderas Nobles */}
-        <div id="calidad">
-          <WoodComparator whatsappNumber={APP_CONFIG.whatsappNumber} />
+        {/* 3. Simulador de Espacios & Ambientes en Vivo */}
+        <div id="simulador">
+          <RoomSimulator whatsappNumber={APP_CONFIG.whatsappNumber} />
         </div>
 
-        {/* 4. Línea del Tiempo del Proceso Artesanal */}
-        <CraftTimeline />
-
-        {/* 5. Catálogo Completo de Muebles Protegido */}
-        <ProductCatalog 
+        {/* 4. Catálogo Moderno con Buscador Instantáneo y Cotizador */}
+        <ModernProductCatalog 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
+          cart={cart}
+          onAddToCart={handleAddToCart}
         />
 
-        {/* 6. Acerca de Maderas Melgar */}
+        {/* 5. Acerca de Maderas Melgar */}
         <AboutBrand />
 
-        {/* 7. Testimonios */}
+        {/* 6. Testimonios de Clientes */}
         <Testimonials />
 
-        {/* 8. Contacto & Ubicación Showroom */}
+        {/* 7. Contacto & Ubicación Showroom */}
         <ContactSection 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           locationAddress={APP_CONFIG.location.addressLine}
@@ -83,6 +101,14 @@ export default function HomePage() {
           onClose={() => setSelectedProduct(null)}
         />
       )}
+
+      {/* Cotizador Multiproducto (Drawer Flotante) */}
+      <MultiQuoteCart 
+        cart={cart}
+        onRemoveFromCart={handleRemoveFromCart}
+        onClearCart={handleClearCart}
+        whatsappNumber={APP_CONFIG.whatsappNumber}
+      />
 
       {/* Botón Flotante WhatsApp */}
       <FloatingWhatsApp whatsappNumber={APP_CONFIG.whatsappNumber} />

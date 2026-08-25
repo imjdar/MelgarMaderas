@@ -36,6 +36,11 @@ export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
       {/* Botón Flotante Contador de Cotización Multiproducto */}
       <div 
         onClick={() => setIsOpen(true)}
+        className="multi-quote-floating-btn"
+        role="button"
+        tabIndex={0}
+        aria-label={`Abrir lista de cotización con ${cart.length} productos`}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIsOpen(true); }}
         style={{
           position: 'fixed',
           bottom: '6rem',
@@ -60,17 +65,32 @@ export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
         </span>
       </div>
 
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .multi-quote-floating-btn {
+            bottom: 5rem !important;
+            right: 1rem !important;
+            padding: 0.7rem 1.1rem !important;
+          }
+        }
+      `}</style>
+
       {/* Drawer / Modal Desplegable del Cotizador */}
       {isOpen && (
-        <div style={{
-          position: 'fixed',
-          inset: 0,
-          zIndex: 9999,
-          backgroundColor: 'rgba(0, 0, 0, 0.75)',
-          backdropFilter: 'blur(10px)',
-          display: 'flex',
-          justifyContent: 'flex-end'
-        }}>
+        <div 
+          role="dialog"
+          aria-modal="true"
+          aria-label="Lista de Cotización Multiproducto"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9999,
+            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backdropFilter: 'blur(10px)',
+            display: 'flex',
+            justifyContent: 'flex-end'
+          }}
+        >
           <div style={{
             width: '100%',
             maxWidth: '460px',

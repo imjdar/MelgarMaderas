@@ -97,6 +97,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
                 placeholder="Buscar mueble por nombre, material (Seike, Roble) o ambiente..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Buscar mueble por nombre, material o ambiente"
                 style={{
                   width: '100%',
                   padding: '0.85rem 1rem 0.85rem 2.8rem',
@@ -114,6 +115,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
             <div style={{ display: 'flex', backgroundColor: '#22262B', borderRadius: '12px', padding: '0.25rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <button
                 onClick={() => setViewMode('grid')}
+                aria-label="Vista en Grilla"
                 style={{
                   padding: '0.6rem 0.85rem',
                   borderRadius: '8px',
@@ -132,6 +134,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
               </button>
               <button
                 onClick={() => setViewMode('list')}
+                aria-label="Vista en Lista"
                 style={{
                   padding: '0.6rem 0.85rem',
                   borderRadius: '8px',
@@ -152,7 +155,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
           </div>
 
           {/* Categorías Pill Bar */}
-          <div style={{ display: 'flex', gap: '0.75rem', overflowX: 'auto', paddingBottom: '0.25rem' }}>
+          <div style={{ display: 'flex', gap: '0.75rem', overflowX: 'auto', paddingBottom: '0.25rem', WebkitOverflowScrolling: 'touch' }}>
             {CATEGORIES.map((cat) => {
               const isSelected = activeCategory === cat.id;
               const count = cat.id === 'todos' 
@@ -163,26 +166,27 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
+                  aria-label={`Filtrar por ${cat.label}`}
                   style={{
                     padding: '0.6rem 1.25rem',
                     borderRadius: '9999px',
-                    backgroundColor: isSelected ? '#10B981' : 'rgba(255,255,255,0.05)',
-                    color: isSelected ? '#ffffff' : '#D1D5DB',
-                    border: isSelected ? '1px solid #10B981' : '1px solid rgba(255,255,255,0.1)',
+                    backgroundColor: isSelected ? '#10B981' : 'rgba(255,255,255,0.04)',
+                    color: isSelected ? '#ffffff' : '#9CA3AF',
+                    border: isSelected ? '1px solid #10B981' : '1px solid rgba(255,255,255,0.08)',
                     fontWeight: isSelected ? 700 : 500,
                     fontSize: '0.85rem',
                     whiteSpace: 'nowrap',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem',
+                    gap: '0.4rem',
                     transition: 'all 0.2s ease'
                   }}
                 >
                   <span>{cat.label}</span>
                   <span style={{
                     backgroundColor: isSelected ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.1)',
-                    padding: '0.1rem 0.5rem',
+                    padding: '0.1rem 0.45rem',
                     borderRadius: '9999px',
                     fontSize: '0.75rem'
                   }}>
@@ -203,7 +207,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
         ) : (
           <div style={viewMode === 'grid' ? {
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             gap: '2rem'
           } : {
             display: 'flex',

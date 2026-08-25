@@ -138,16 +138,16 @@ export const RoomSimulator: React.FC<RoomSimulatorProps> = ({ whatsappNumber }) 
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '2.5rem',
-          alignItems: 'center'
+          alignItems: 'start'
         }}>
           
           {/* Lado Izquierdo: Visualizador Dinámico de la Habitación con Glassmorphism */}
           <div style={{
             background: activeEnv.bgGradient,
             borderRadius: '24px',
-            padding: '2rem',
+            padding: 'clamp(1.25rem, 4vw, 2rem)',
             border: '1px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
             position: 'relative',
@@ -202,7 +202,7 @@ export const RoomSimulator: React.FC<RoomSimulatorProps> = ({ whatsappNumber }) 
             {/* Especificaciones Rápidas */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
               gap: '1rem',
               marginTop: '1.5rem'
             }}>
@@ -243,13 +243,14 @@ export const RoomSimulator: React.FC<RoomSimulatorProps> = ({ whatsappNumber }) 
               <label style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#9CA3AF', fontWeight: 700, marginBottom: '1rem' }}>
                 1. Seleccione Pieza de Mobiliario:
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.75rem' }}>
                 {FEATURED_FURNITURE.map((item) => {
                   const isSelected = activeFurniture.id === item.id;
                   return (
                     <button
                       key={item.id}
                       onClick={() => setActiveFurniture(item)}
+                      aria-label={`Seleccionar ${item.name}`}
                       style={{
                         padding: '0.85rem',
                         borderRadius: '12px',
@@ -286,6 +287,10 @@ export const RoomSimulator: React.FC<RoomSimulatorProps> = ({ whatsappNumber }) 
                     <div
                       key={env.id}
                       onClick={() => setActiveEnv(env)}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Seleccionar ambiente ${env.name}`}
+                      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setActiveEnv(env); }}
                       style={{
                         padding: '1rem',
                         borderRadius: '14px',
@@ -313,6 +318,7 @@ export const RoomSimulator: React.FC<RoomSimulatorProps> = ({ whatsappNumber }) 
             {/* Botón de Cotización Directa */}
             <button
               onClick={handleCotizarSimulacion}
+              aria-label="Cotizar esta combinación por WhatsApp"
               style={{
                 width: '100%',
                 padding: '1rem 2rem',

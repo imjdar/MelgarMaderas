@@ -99,6 +99,7 @@ export const ModernHero: React.FC<ModernHeroProps> = ({
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
               <button 
                 onClick={onExploreCatalog}
+                aria-label="Explorar Colección de Muebles"
                 style={{
                   padding: '0.9rem 2.25rem',
                   borderRadius: '9999px',
@@ -120,6 +121,7 @@ export const ModernHero: React.FC<ModernHeroProps> = ({
 
               <button 
                 onClick={onExploreSimulator}
+                aria-label="Probar Simulador de Espacios"
                 style={{
                   padding: '0.9rem 2rem',
                   borderRadius: '9999px',
@@ -143,7 +145,7 @@ export const ModernHero: React.FC<ModernHeroProps> = ({
             {/* Badges de Garantía */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
               gap: '1rem',
               paddingTop: '1.5rem',
               borderTop: '1px solid rgba(255,255,255,0.1)'
