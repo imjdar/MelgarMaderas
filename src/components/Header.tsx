@@ -23,40 +23,41 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber, bannerText }) =>
 
   const navLinks = [
     { label: 'Inicio', href: '#inicio' },
-    { label: 'Catálogo de Productos', href: '#catalogo' },
-    { label: 'Madera Maciza', href: '#calidad' },
-    { label: 'Nuestra Historia', href: '#nosotros' },
-    { label: 'Contacto & Showroom', href: '#contacto' }
+    { label: 'Catálogo Bento', href: '#catalogo' },
+    { label: 'Maderas Nobles', href: '#calidad' },
+    { label: 'Taller & Historia', href: '#nosotros' },
+    { label: 'Showroom Quito', href: '#contacto' }
   ];
 
   return (
     <header className={`glass-header ${isScrolled ? 'scrolled' : ''}`}>
       {bannerText && (
         <div style={{
-          backgroundColor: '#3A1A0E',
-          color: '#FDFBF7',
+          backgroundColor: '#14181D',
+          color: '#FAF8F5',
           fontSize: '0.85rem',
           fontWeight: 600,
-          padding: '0.4rem 1rem',
+          padding: '0.45rem 1rem',
           textAlign: 'center',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: '0.5rem',
           letterSpacing: '0.04em',
-          borderBottom: '1px solid #C59B27'
+          borderBottom: '1px solid rgba(245, 158, 11, 0.3)'
         }}>
           {bannerText}
         </div>
       )}
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '70px' }}>
+
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
         
         {/* Logo Corporativo */}
         <a href="#inicio" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }} aria-label="Maderas Melgar Inicio">
           <img 
             src="/assets/branding/logo-full.png" 
             alt="Maderas Melgar Logo" 
-            style={{ height: '44px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '44px', width: 'auto', objectFit: 'contain', filter: 'brightness(1.1)' }}
             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
               e.currentTarget.src = '/assets/branding/logo-symbol.png';
             }}
@@ -70,14 +71,14 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber, bannerText }) =>
               key={link.label}
               href={link.href}
               style={{
-                fontFamily: 'var(--font-heading)',
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: '600',
-                fontSize: '0.95rem',
-                color: 'var(--color-wood-dark)',
-                transition: 'color var(--transition-fast)'
+                fontSize: '0.925rem',
+                color: '#FFFFFF',
+                transition: 'color 0.2s ease'
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-green-primary)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-wood-dark)')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#F59E0B')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
             >
               {link.label}
             </a>
@@ -90,18 +91,31 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber, bannerText }) =>
             href={buildWhatsAppUrl(whatsappNumber, 'Consulta General')}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ padding: '0.55rem 1.25rem', fontSize: '0.875rem' }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              backgroundColor: '#F59E0B',
+              color: '#0B0D0E',
+              padding: '0.6rem 1.35rem',
+              borderRadius: '10px',
+              fontWeight: 800,
+              fontSize: '0.85rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              transition: 'transform 0.2s ease'
+            }}
             aria-label="Cotizar por WhatsApp"
           >
-            <MessageCircle size={18} />
+            <MessageCircle size={16} />
             <span>Cotizar WhatsApp</span>
           </a>
 
           <button
             className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ display: 'none', color: 'var(--color-wood-dark)', padding: '0.5rem' }}
+            style={{ display: 'none', color: '#FFFFFF', padding: '0.5rem' }}
             aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={mobileMenuOpen}
           >
@@ -115,8 +129,8 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber, bannerText }) =>
       {mobileMenuOpen && (
         <div
           style={{
-            background: 'var(--color-cream-bg)',
-            borderBottom: '1px solid var(--glass-border)',
+            background: '#14181D',
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
             padding: '1.5rem 2rem',
             display: 'flex',
             flexDirection: 'column',
@@ -129,10 +143,10 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber, bannerText }) =>
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                fontFamily: 'var(--font-heading)',
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: '600',
                 fontSize: '1.1rem',
-                color: 'var(--color-wood-dark)'
+                color: '#FFFFFF'
               }}
             >
               {link.label}

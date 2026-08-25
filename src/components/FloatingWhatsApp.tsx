@@ -20,8 +20,8 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ whatsappNumb
       style={{
         position: 'fixed',
         bottom: '2rem',
-        left: '2rem',
-        zIndex: 990,
+        right: '2rem',
+        zIndex: 9900,
         backgroundColor: '#25D366',
         color: '#FFFFFF',
         width: '60px',
@@ -61,7 +61,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ whatsappNumb
         @media (max-width: 640px) {
           .floating-wa-btn {
             bottom: 1.25rem !important;
-            left: 1.25rem !important;
+            right: 1.25rem !important;
             width: 52px !important;
             height: 52px !important;
           }

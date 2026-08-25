@@ -1,47 +1,42 @@
 /* ==========================================================================
-   MADERAS MELGAR - NEXT.JS GLOBALS & DESIGN SYSTEM STYLES
-   Colors based on Corporate Manual:
-   - Deep Wood: #3A1A0E (CMYK 33, 83, 99, 44)
-   - Corporate Green: #0D6838 (CMYK 90, 32, 92, 24)
-   - Luxury Cream: #FDFBF7
+   MADERAS MELGAR - NEXT.JS GLOBALS & DESIGN SYSTEM STYLES (PROPUESTA 2: OBSIDIAN)
    ========================================================================== */
 
 :root {
-  /* Corporate Palette */
-  --color-wood-dark: #3A1A0E;
-  --color-wood-deep: #251108;
-  --color-wood-medium: #6E3B20;
-  --color-green-primary: #0D6838;
-  --color-green-hover: #09522B;
-  --color-green-light: #EBF7F0;
-  --color-gold-accent: #C5A059;
-  --color-gold-hover: #AA8540;
+  /* Obsidian Dark Palette */
+  --color-wood-dark: #FFFFFF;
+  --color-wood-deep: #14181D;
+  --color-wood-medium: #F59E0B;
+  --color-green-primary: #F59E0B;
+  --color-green-hover: #D97706;
+  --color-green-light: rgba(245, 158, 11, 0.12);
+  --color-gold-accent: #F59E0B;
+  --color-gold-hover: #FCD34D;
   
   /* Backgrounds & Surfaces */
-  --color-cream-bg: #FDFBF7;
-  --color-cream-surface: #F5F1E8;
-  --color-surface-white: #FFFFFF;
-  --color-dark-bg: #161312;
-  --color-dark-surface: #221D1B;
+  --color-cream-bg: #0B0D0E;
+  --color-cream-surface: #14181D;
+  --color-surface-white: #14181D;
+  --color-dark-bg: #0B0D0E;
+  --color-dark-surface: #14181D;
 
   /* Typography Colors */
-  --color-text-dark: #1A1715;
-  --color-text-muted: #5C544C;
-  --color-text-light: #8E847A;
+  --color-text-dark: #FFFFFF;
+  --color-text-muted: #9CA3AF;
+  --color-text-light: #6B7280;
   --color-text-white: #FFFFFF;
 
   /* Fonts */
-  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-script: 'Cormorant Garamond', Georgia, serif;
 
   /* Shadows & Glassmorphism */
-  --shadow-sm: 0 2px 8px rgba(26, 23, 21, 0.04);
-  --shadow-md: 0 8px 24px rgba(26, 23, 21, 0.08);
-  --shadow-lg: 0 16px 40px rgba(26, 23, 21, 0.12);
-  --shadow-xl: 0 24px 60px rgba(13, 104, 56, 0.18);
-  --glass-bg: rgba(253, 251, 247, 0.95);
-  --glass-border: rgba(220, 210, 195, 0.5);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 24px 60px rgba(245, 158, 11, 0.15);
+  --glass-bg: rgba(11, 13, 14, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.1);
 
   /* Radius & Transitions */
   --radius-sm: 6px;
@@ -62,12 +57,13 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  background-color: #0B0D0E;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-cream-bg);
-  color: var(--color-text-dark);
+  background-color: #0B0D0E;
+  color: #FAF8F5;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -86,7 +82,7 @@ input, textarea, select {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--color-wood-dark);
+  color: #FFFFFF;
   line-height: 1.25;
   font-weight: 700;
 }
@@ -124,113 +120,17 @@ img {
   }
 }
 
-.font-script {
-  font-family: var(--font-script);
-  font-style: italic;
-}
-
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 1rem;
-  background-color: var(--color-green-light);
-  color: var(--color-green-primary);
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  color: var(--color-wood-dark);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.125rem;
-  color: var(--color-text-muted);
-  max-width: 680px;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  background-color: var(--color-green-primary);
-  color: var(--color-text-white);
-  padding: 0.875rem 2rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all var(--transition-fast);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-green-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xl);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  background-color: var(--color-wood-dark);
-  color: var(--color-text-white);
-  padding: 0.875rem 2rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all var(--transition-fast);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-wood-deep);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  background: transparent;
-  color: var(--color-wood-dark);
-  border: 1.5px solid var(--color-wood-dark);
-  padding: 0.875rem 2rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all var(--transition-fast);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-wood-dark);
-  color: var(--color-text-white);
-  transform: translateY(-2px);
-}
-
-/* Header Pegajoso (Sticky) - Sin Solapamientos */
+/* Header Pegajoso (Sticky) Obsidian Dark */
 .glass-header {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--glass-bg);
+  background: rgba(11, 13, 14, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--transition-normal);
 }
 
@@ -251,16 +151,17 @@ img {
   bottom: 1.5rem;
   left: 1.5rem;
   z-index: 9999;
-  background-color: var(--color-wood-dark);
-  color: var(--color-text-white);
+  background-color: #14181D;
+  color: #FFFFFF;
   padding: 0.85rem 1.25rem;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-size: 0.85rem;
-  border-left: 4px solid var(--color-green-primary);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-left: 4px solid #F59E0B;
   animation: slideInUp 0.3s ease forwards;
   max-width: 420px;
 }
