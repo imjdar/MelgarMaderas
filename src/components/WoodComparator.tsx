@@ -161,7 +161,7 @@ export const WoodComparator: React.FC<WoodComparatorProps> = ({ whatsappNumber }
               }}>
                 {selectedWood.badge}
               </span>
-              <span style={{ fontSize: '0.85rem', fontStyle: 'italic', color: '#8E847A' }}>
+              <span style={{ fontSize: '0.85rem', fontStyle: 'italic', color: '#595148' }}>
                 {selectedWood.scientificName}
               </span>
             </div>
@@ -178,7 +178,7 @@ export const WoodComparator: React.FC<WoodComparatorProps> = ({ whatsappNumber }
 
             {/* Lista de Ambientes Recomendados */}
             <div style={{ marginBottom: '1.5rem' }}>
-              <h4 style={{ fontSize: '0.9rem', textTransform: 'uppercase', color: '#8E847A', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+              <h4 style={{ fontSize: '0.9rem', textTransform: 'uppercase', color: '#595148', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
                 Recomendada Especialmente Para:
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -201,6 +201,7 @@ export const WoodComparator: React.FC<WoodComparatorProps> = ({ whatsappNumber }
               onClick={() => handleConsultWood(selectedWood.name)}
               className="btn-primary"
               style={{ width: '100%', justifyContent: 'center' }}
+              aria-label={`Cotizar mueble en ${selectedWood.name}`}
             >
               <MessageCircle size={18} /> Cotizar Mueble en {selectedWood.name.split(' ')[3] || selectedWood.name}
             </button>
@@ -210,7 +211,7 @@ export const WoodComparator: React.FC<WoodComparatorProps> = ({ whatsappNumber }
           <div style={{
             backgroundColor: '#FDFBF7',
             borderRadius: '16px',
-            padding: '2rem',
+            padding: 'clamp(1.25rem, 4vw, 2rem)',
             border: '1px solid #E5DCCB'
           }}>
             <h4 style={{ fontSize: '1.2rem', color: '#3A1A0E', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -235,15 +236,15 @@ export const WoodComparator: React.FC<WoodComparatorProps> = ({ whatsappNumber }
             </div>
 
             {/* Fichas de Datos */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
               <div style={{ backgroundColor: '#ffffff', padding: '1rem', borderRadius: '12px', border: '1px solid #EAE3D2' }}>
-                <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#8E847A' }}>Vida Útil Estimada</div>
+                <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#595148' }}>Vida Útil Estimada</div>
                 <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#3A1A0E', marginTop: '0.2rem' }}>
                   {selectedWood.durabilityYears}
                 </div>
               </div>
               <div style={{ backgroundColor: '#ffffff', padding: '1rem', borderRadius: '12px', border: '1px solid #EAE3D2' }}>
-                <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#8E847A' }}>Secado en Horno</div>
+                <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#595148' }}>Secado en Horno</div>
                 <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0D6838', marginTop: '0.2rem' }}>
                   100% Garantizado
                 </div>
@@ -252,7 +253,7 @@ export const WoodComparator: React.FC<WoodComparatorProps> = ({ whatsappNumber }
 
             {/* Patrón de Veta */}
             <div style={{ backgroundColor: '#ffffff', padding: '1rem', borderRadius: '12px', border: '1px solid #EAE3D2' }}>
-              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#8E847A', marginBottom: '0.3rem' }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#595148', marginBottom: '0.3rem' }}>
                 Características Estéticas de la Veta
               </div>
               <div style={{ fontSize: '0.9rem', color: '#3A1A0E', fontWeight: 500 }}>

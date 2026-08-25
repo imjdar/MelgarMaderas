@@ -56,6 +56,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ whatsappNumber, 
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
+                aria-label={`Filtrar categoría por ${cat.label}`}
                 style={{
                   padding: '0.75rem 1.5rem',
                   borderRadius: 'var(--radius-full)',
@@ -77,7 +78,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ whatsappNumber, 
         <div 
           style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', 
             gap: '2.5rem' 
           }}
         >
@@ -174,12 +175,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ whatsappNumber, 
                   <span>{product.material}</span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '0.75rem' }}>
                   
                   <button
                     onClick={() => onSelectProduct(product)}
                     className="btn-outline"
                     style={{ padding: '0.6rem 0.5rem', fontSize: '0.85rem' }}
+                    aria-label={`Ver detalles de ${product.name}`}
                   >
                     <Eye size={16} />
                     <span>Ver Detalle</span>
@@ -191,6 +193,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ whatsappNumber, 
                     rel="noopener noreferrer"
                     className="btn-primary"
                     style={{ padding: '0.6rem 0.5rem', fontSize: '0.85rem' }}
+                    aria-label={`Cotizar ${product.name} por WhatsApp`}
                   >
                     <MessageCircle size={16} />
                     <span>Cotizar</span>

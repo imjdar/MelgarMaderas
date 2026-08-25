@@ -25,6 +25,9 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, whatsappNum
 
   return (
     <div 
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-modal-title"
       style={{
         position: 'fixed',
         inset: 0,
@@ -70,12 +73,12 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, whatsappNum
             justifyContent: 'center',
             transition: 'all var(--transition-fast)'
           }}
-          aria-label="Cerrar modal"
+          aria-label="Cerrar modal de producto"
         >
           <X size={22} />
         </button>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))' }}>
           
           <div style={{ position: 'relative', backgroundColor: '#1A1715' }}>
             <WatermarkImage
@@ -104,13 +107,13 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, whatsappNum
             </div>
           </div>
 
-          <div style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ padding: 'clamp(1.5rem, 4vw, 2.5rem) 2rem', display: 'flex', flexDirection: 'column' }}>
             
             <div className="section-tag" style={{ alignSelf: 'flex-start' }}>
               <span>{product.categoryLabel}</span>
             </div>
 
-            <h2 style={{ fontSize: '1.75rem', color: 'var(--color-wood-dark)', marginBottom: '0.75rem' }}>
+            <h2 id="product-modal-title" style={{ fontSize: '1.75rem', color: 'var(--color-wood-dark)', marginBottom: '0.75rem' }}>
               {product.name}
             </h2>
 
