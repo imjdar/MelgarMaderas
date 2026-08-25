@@ -71,16 +71,16 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog }) => {
             </p>
 
             <p className="section-subtitle" style={{ marginBottom: '2rem' }}>
-              Presentamos nuestro catálogo de mobiliario informativo elaborado en **madera maciza 100% seleccionada**. Diseños sobrios, sofisticados y estructurados para perdurar por generaciones.
+              Presentamos nuestro catálogo de mobiliario informativo elaborado en <strong>madera maciza 100% seleccionada</strong>. Diseños sobrios, sofisticados y estructurados para perdurar por generaciones.
             </p>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
-              <a href="#catalogo" className="btn-primary" onClick={(e) => { e.preventDefault(); onExploreCatalog(); }}>
+              <a href="#catalogo" className="btn-primary" onClick={(e) => { e.preventDefault(); onExploreCatalog(); }} aria-label="Explorar Catálogo de Productos">
                 <span>Explorar Catálogo</span>
                 <ArrowRight size={18} />
               </a>
 
-              <a href="#calidad" className="btn-outline">
+              <a href="#calidad" className="btn-outline" aria-label="Ver Garantía de Madera">
                 <span>Garantía de Madera</span>
               </a>
             </div>
@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog }) => {
             <div 
               style={{ 
                 display: 'grid', 
-                gridTemplateColumns: 'repeat(3, 1fr)', 
+                gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))', 
                 gap: '1rem',
                 paddingTop: '1.5rem',
                 borderTop: '1px solid rgba(110, 59, 32, 0.15)'
