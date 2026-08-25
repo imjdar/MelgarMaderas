@@ -20,15 +20,14 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
         backgroundColor: '#1C1410',
         color: '#FAF8F5',
         overflow: 'hidden',
-        paddingTop: '6rem',
-        paddingBottom: '5rem'
+        padding: '4.5rem 0 5rem 0'
       }}
     >
       {/* Fondo Amaderado Sutil */}
       <div style={{
         position: 'absolute',
         inset: 0,
-        opacity: 0.15,
+        opacity: 0.12,
         backgroundImage: 'radial-gradient(#C59B27 1px, transparent 1px)',
         backgroundSize: '32px 32px'
       }} />
@@ -37,7 +36,7 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
         
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
           gap: '3.5rem',
           alignItems: 'center'
         }}>
@@ -60,7 +59,7 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
               textTransform: 'uppercase',
               marginBottom: '1.5rem'
             }}>
-              <Award size={14} /> FIRMA ECUAATORIANA DE MOBILIARIO EN MADERA MACIZA
+              <Award size={14} /> FIRMA ECUATORIANA DE MOBILIARIO EN MADERA MACIZA
             </div>
 
             <h1 style={{
@@ -82,7 +81,7 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
               fontSize: '1.1rem',
               color: '#D5CDC4',
               lineHeight: 1.7,
-              marginBottom: '2rem',
+              marginBottom: '2.25rem',
               maxWidth: '540px'
             }}>
               Diseño atemporal y ebanistería de alta gama en Quito, Ecuador. Piezas exclusivas en 
@@ -98,7 +97,7 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
                   backgroundColor: '#C59B27',
                   color: '#0F0C0A',
                   borderColor: '#C59B27',
-                  padding: '1rem 2rem',
+                  padding: '0.9rem 2rem',
                   fontSize: '0.85rem'
                 }}
               >
@@ -112,7 +111,7 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
                   backgroundColor: 'transparent',
                   color: '#FAF8F5',
                   borderColor: 'rgba(255, 255, 255, 0.3)',
-                  padding: '1rem 2rem',
+                  padding: '0.9rem 2rem',
                   fontSize: '0.85rem'
                 }}
               >

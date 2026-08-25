@@ -1,233 +1,176 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, ShieldCheck, Sparkles, Eye, Layers, CheckCircle } from 'lucide-react';
 import { WatermarkImage } from './WatermarkImage';
+import { ArrowUpRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface ModernHeroProps {
   onExploreCatalog: () => void;
-  onExploreSimulator: () => void;
+  onContactWhatsApp: () => void;
 }
 
 export const ModernHero: React.FC<ModernHeroProps> = ({
   onExploreCatalog,
-  onExploreSimulator
+  onContactWhatsApp
 }) => {
   return (
-    <section 
-      id="inicio"
-      style={{
-        paddingTop: '140px',
-        paddingBottom: '90px',
-        backgroundColor: '#0F1215',
-        backgroundImage: 'radial-gradient(ellipse at top, #1F2937 0%, #0F1215 70%)',
-        position: 'relative',
-        overflow: 'hidden',
-        color: '#ffffff'
-      }}
-    >
-      {/* Malla Decorativa de Luz Neón Glassmorphism */}
-      <div style={{
-        position: 'absolute',
-        top: '-10%',
-        left: '20%',
-        width: '400px',
-        height: '400px',
-        background: 'radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%)',
-        filter: 'blur(50px)',
-        pointerEvents: 'none'
-      }} />
-
-      <div className="container">
+    <section style={{ backgroundColor: '#101316', color: '#F4EFE6', padding: '4.5rem 0 5rem 0', position: 'relative' }}>
+      <div className="container-custom">
+        
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
           gap: '3.5rem',
           alignItems: 'center'
         }}>
           
-          {/* Lado Izquierdo: Copy Moderno y CTAs */}
+          {/* Lado Izquierdo: Presentación Arquitectónica */}
           <div>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              backgroundColor: 'rgba(212, 175, 55, 0.15)',
-              color: '#D4AF37',
-              padding: '0.35rem 1rem',
+              backgroundColor: 'rgba(212, 175, 55, 0.1)',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              padding: '0.4rem 1rem',
               borderRadius: '9999px',
-              fontSize: '0.85rem',
+              color: '#D4AF37',
+              fontSize: '0.75rem',
               fontWeight: 700,
-              letterSpacing: '0.05em',
+              letterSpacing: '0.1em',
               textTransform: 'uppercase',
-              marginBottom: '1.5rem',
-              border: '1px solid rgba(212, 175, 55, 0.3)'
+              marginBottom: '1.5rem'
             }}>
-              <Sparkles size={14} /> Vanguardia & Maderas Macizas
+              <Sparkles size={14} /> DISEÑO ARQUITECTÓNICO & MADERA MACIZA
             </div>
 
             <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4.25rem)',
+              fontSize: 'clamp(2.25rem, 5vw, 3.85rem)',
+              fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif",
               fontWeight: 800,
               lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-              color: '#ffffff',
-              marginBottom: '1rem'
+              color: '#FFFFFF',
+              marginBottom: '1.5rem',
+              letterSpacing: '-0.03em'
             }}>
-              Maderas Melgar <br />
-              <span style={{
-                background: 'linear-gradient(90deg, #10B981 0%, #D4AF37 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                Diseño que Perdura
-              </span>
+              Mobiliario de Autor <br />
+              <span style={{ color: '#D4AF37' }}>Hecho en Ecuador</span>
             </h1>
 
             <p style={{
-              fontSize: '1.2rem',
-              color: '#D1D5DB',
-              marginBottom: '2rem',
-              lineHeight: 1.6,
-              maxWidth: '560px'
+              fontSize: '1.1rem',
+              color: '#9CA3AF',
+              lineHeight: 1.7,
+              marginBottom: '2.5rem',
+              maxWidth: '520px'
             }}>
-              Portal informativo y catálogo digital de mobiliario 100% madera maciza tratada al horno. 
-              Experimente el simulador de ambientes en vivo y cotice sus piezas a medida.
+              Catálogo informativo exclusivo para proyectos residenciales y corporativos. Maderas seleccionadas de origen noble (Seike, Roble, Laurel) procesadas en horno con precisión técnica en Quito.
             </p>
 
-            {/* Acciones principales */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
-              <button 
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <button
                 onClick={onExploreCatalog}
-                aria-label="Explorar Colección de Muebles"
                 style={{
-                  padding: '0.9rem 2.25rem',
-                  borderRadius: '9999px',
-                  backgroundColor: '#10B981',
-                  color: '#ffffff',
-                  fontWeight: 700,
-                  fontSize: '1rem',
+                  backgroundColor: '#D4AF37',
+                  color: '#0F1215',
                   border: 'none',
+                  padding: '0.9rem 2.25rem',
+                  borderRadius: '12px',
+                  fontWeight: 800,
+                  fontSize: '0.85rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
                   cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.75rem',
-                  boxShadow: '0 12px 30px rgba(16, 185, 129, 0.35)'
+                  gap: '0.5rem',
+                  transition: 'all 0.2s ease'
                 }}
               >
-                <span>Explorar Colección</span>
-                <ArrowRight size={18} />
+                Ver Colecciones <ArrowUpRight size={18} />
               </button>
 
-              <button 
-                onClick={onExploreSimulator}
-                aria-label="Probar Simulador de Espacios"
+              <button
+                onClick={onContactWhatsApp}
                 style={{
-                  padding: '0.9rem 2rem',
-                  borderRadius: '9999px',
-                  backgroundColor: 'rgba(255,255,255,0.05)',
-                  color: '#ffffff',
-                  fontWeight: 600,
-                  fontSize: '1rem',
-                  border: '1px solid rgba(255,255,255,0.15)',
+                  backgroundColor: 'transparent',
+                  color: '#FFFFFF',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  padding: '0.9rem 2.25rem',
+                  borderRadius: '12px',
+                  fontWeight: 700,
+                  fontSize: '0.85rem',
                   cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  backdropFilter: 'blur(10px)'
+                  transition: 'all 0.2s ease'
                 }}
               >
-                <Eye size={18} color="#D4AF37" />
-                <span>Simulador de Espacios</span>
+                Cotizar Proyecto a Medida
               </button>
             </div>
 
-            {/* Badges de Garantía */}
+            {/* Garantías Técnicas */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
-              gap: '1rem',
-              paddingTop: '1.5rem',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '1.5rem',
+              marginTop: '3.5rem',
+              paddingTop: '2rem',
               borderTop: '1px solid rgba(255,255,255,0.1)'
             }}>
               <div>
-                <div style={{ color: '#10B981', fontWeight: 800, fontSize: '1.25rem' }}>100%</div>
-                <div style={{ fontSize: '0.8rem', color: '#9CA3AF' }}>Madera Maciza</div>
+                <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#9CA3AF', letterSpacing: '0.05em' }}>Tratamiento Térmico</span>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#D4AF37', marginTop: '0.2rem' }}>Secado 8-10% Horno</div>
               </div>
+
               <div>
-                <div style={{ color: '#D4AF37', fontWeight: 800, fontSize: '1.25rem' }}>Secado</div>
-                <div style={{ fontSize: '0.8rem', color: '#9CA3AF' }}>Térmico en Horno</div>
-              </div>
-              <div>
-                <div style={{ color: '#10B981', fontWeight: 800, fontSize: '1.25rem' }}>Anti-Robo</div>
-                <div style={{ fontSize: '0.8rem', color: '#9CA3AF' }}>Protección WAF</div>
+                <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#9CA3AF', letterSpacing: '0.05em' }}>Dominio Oficial</span>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.2rem' }}>melgarmaderas.com.ec</div>
               </div>
             </div>
 
           </div>
 
-          {/* Lado Derecho: Showcase en Tarjeta de Cristal Translúcido */}
+          {/* Lado Derecho: Imagen de Mobiliario Protegida */}
           <div style={{ position: 'relative' }}>
             <div style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.04)',
-              borderRadius: '24px',
-              padding: '1.25rem',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.6)',
-              backdropFilter: 'blur(16px)'
+              borderRadius: '20px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.1)',
+              boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
             }}>
-              <WatermarkImage 
-                src="/assets/products/sala-linea-premium.jpg"
-                alt="Juego de Sala Línea Premium Melgar"
-                aspectRatio="4/3"
-                watermarkText="melgarmaderas.com.ec • catálogo oficial"
+              <WatermarkImage
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80"
+                alt="Mobiliario de Sala Vanguardia en Madera Maciza - Maderas Melgar Quito"
+                width={800}
+                height={600}
+                style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                priority
               />
+            </div>
 
-              {/* Card Flotante de Estado */}
-              <div style={{
-                marginTop: '1.25rem',
-                backgroundColor: 'rgba(18, 22, 25, 0.9)',
-                borderRadius: '16px',
-                padding: '1rem 1.25rem',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <div style={{
-                    width: '38px',
-                    height: '38px',
-                    borderRadius: '10px',
-                    backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid rgba(16, 185, 129, 0.3)'
-                  }}>
-                    <ShieldCheck size={20} color="#10B981" />
-                  </div>
-                  <div>
-                    <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#ffffff' }}>
-                      Garantía Intergeneracional
-                    </span>
-                    <span style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>
-                      Madera de Seike / Roble Seleccionada
-                    </span>
-                  </div>
-                </div>
-
-                <div style={{ textAlign: 'right' }}>
-                  <span style={{ fontSize: '0.7rem', color: '#10B981', fontWeight: 700, textTransform: 'uppercase' }}>
-                    Showroom Quito
-                  </span>
-                </div>
-              </div>
-
+            <div style={{
+              position: 'absolute',
+              bottom: '1.5rem',
+              left: '1.5rem',
+              backgroundColor: 'rgba(16, 19, 22, 0.9)',
+              backdropFilter: 'blur(10px)',
+              padding: '0.75rem 1.25rem',
+              borderRadius: '12px',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: '#FFFFFF',
+              fontSize: '0.8rem',
+              fontWeight: 700
+            }}>
+              <ShieldCheck size={16} color="#D4AF37" />
+              <span>Diseños Exclusivos Protegidos por Ley</span>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

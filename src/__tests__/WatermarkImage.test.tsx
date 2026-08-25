@@ -10,7 +10,9 @@ describe('WatermarkImage Component', () => {
       <WatermarkImage
         src="/assets/products/sala-linea-premium.jpg"
         alt="Juego de Sala"
-        watermarkText="melgarmaderas.com.ec"
+        domainWatermark="melgarmaderas.com.ec"
+        width={500}
+        height={400}
       />
     );
 

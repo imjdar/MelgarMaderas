@@ -22,14 +22,14 @@ export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const handleContactWhatsApp = () => {
-    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Deseo solicitar asesoría y cotización personalizada para mobiliario a medida en Quito.`;
+    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Quisiera ponerme en contacto para asesoría sobre muebles de madera maciza a medida.`;
     window.open(`https://wa.me/${APP_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
-    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#FAF8F5' }}>
+    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#FDFBF7' }}>
       
-      {/* Header Corporativo Informativo */}
+      {/* Header Corporativo para Propuesta 1 */}
       <Header 
         whatsappNumber={APP_CONFIG.whatsappNumber}
         bannerText={
@@ -40,10 +40,10 @@ export default function HomePage() {
         }
       />
 
-      {/* Contenido Editorial Informativo */}
+      {/* Secciones Informativas de Propuesta 1 */}
       <main style={{ flexGrow: 1 }}>
         
-        {/* 1. Hero Editorial de Lujo */}
+        {/* 1. Hero Editorial Herencia */}
         <EditorialHero 
           onExploreCatalog={() => {
             const catalogEl = document.getElementById('catalogo');
@@ -52,13 +52,13 @@ export default function HomePage() {
           onContactWhatsApp={handleContactWhatsApp}
         />
 
-        {/* 2. Propuestas de Valor de Ebanistería */}
+        {/* 2. Propuestas de Valor Herencia */}
         <ValueProps />
 
-        {/* 3. Proceso Artesanal & Secado al Horno (8-10%) */}
+        {/* 3. Técnica Artesanal & Secado al Horno (8-10%) */}
         <CraftsmanshipSection />
 
-        {/* 4. Catálogo Informativo Protegido con Marca de Agua */}
+        {/* 4. Catálogo Informativo por Colecciones con Marca de Agua */}
         <InformationalCatalog 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
@@ -70,7 +70,7 @@ export default function HomePage() {
         {/* 6. Acerca de Maderas Melgar */}
         <AboutBrand />
 
-        {/* 7. Opiniones de Clientes */}
+        {/* 7. Testimonios */}
         <Testimonials />
 
         {/* 8. Contacto & Ubicación Showroom en Quito */}
@@ -81,11 +81,8 @@ export default function HomePage() {
 
       </main>
 
-      {/* Footer Corporativo con Enlaces SEO */}
-      <Footer 
-        companyName={APP_CONFIG.companyName}
-        whatsappNumber={APP_CONFIG.whatsappNumber}
-      />
+      {/* Footer Corporativo */}
+      <Footer />
 
       {/* Modal Informativo de Ficha Técnica */}
       {selectedProduct && (
@@ -96,7 +93,7 @@ export default function HomePage() {
         />
       )}
 
-      {/* Protección de Seguridad & Clic Derecho */}
+      {/* Protección de Clic Derecho & Marca de Agua */}
       <SecurityGuard />
 
       {/* Botón Flotante WhatsApp */}

@@ -84,6 +84,8 @@ export function generateLocalBusinessSchema(config: SchemaConfig = DEFAULT_SCHEM
   };
 }
 
+export const getFurnitureStoreSchema = generateLocalBusinessSchema;
+
 export function generateFAQSchema() {
   return {
     '@context': 'https://schema.org',
