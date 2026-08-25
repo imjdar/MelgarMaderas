@@ -4,96 +4,90 @@ import React, { useState } from 'react';
 import { APP_CONFIG } from '@/services/configService';
 import { Product } from '@/types';
 import { Header } from '@/components/Header';
-import { ModernHero } from '@/components/ModernHero';
+import { EditorialHero } from '@/components/EditorialHero';
 import { ValueProps } from '@/components/ValueProps';
-import { RoomSimulator } from '@/components/RoomSimulator';
-import { ModernProductCatalog } from '@/components/ModernProductCatalog';
-import { MultiQuoteCart } from '@/components/MultiQuoteCart';
+import { CraftsmanshipSection } from '@/components/CraftsmanshipSection';
+import { InformationalCatalog } from '@/components/InformationalCatalog';
+import { CopyrightNotice } from '@/components/CopyrightNotice';
 import { AboutBrand } from '@/components/AboutBrand';
 import { Testimonials } from '@/components/Testimonials';
 import { ContactSection } from '@/components/ContactSection';
 import { ProductModal } from '@/components/ProductModal';
+import { SecurityGuard } from '@/components/SecurityGuard';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { Footer } from '@/components/Footer';
-import { Sparkles } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [cart, setCart] = useState<Product[]>([]);
 
-  const handleAddToCart = (product: Product) => {
-    if (!cart.some(p => p.id === product.id)) {
-      setCart([...cart, product]);
-    }
-  };
-
-  const handleRemoveFromCart = (productId: string) => {
-    setCart(cart.filter(p => p.id !== productId));
-  };
-
-  const handleClearCart = () => {
-    setCart([]);
+  const handleContactWhatsApp = () => {
+    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Deseo solicitar asesoría y cotización personalizada para mobiliario a medida en Quito.`;
+    window.open(`https://wa.me/${APP_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
-    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#0F1215' }}>
+    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#FAF8F5' }}>
       
-      {/* Header Corporativo con Banner Integrado para Propuesta 2 */}
+      {/* Header Corporativo Informativo */}
       <Header 
         whatsappNumber={APP_CONFIG.whatsappNumber}
         bannerText={
           <>
-            <Sparkles size={14} color="#10B981" />
-            <span>PROPUESTA 2: <strong>Vanguardia Moderna & Glassmorphism Élite</strong> • Maderas Melgar</span>
+            <Award size={14} color="#C59B27" />
+            <span>PROPUESTA 1: <strong>Atelier Herencia & Elegancia Clásica</strong> • melgarmaderas.com.ec</span>
           </>
         }
       />
 
-      {/* Secciones Principales de Propuesta 2 */}
+      {/* Contenido Editorial Informativo */}
       <main style={{ flexGrow: 1 }}>
         
-        {/* 1. Hero Moderno Cinematográfico */}
-        <ModernHero 
+        {/* 1. Hero Editorial de Lujo */}
+        <EditorialHero 
           onExploreCatalog={() => {
             const catalogEl = document.getElementById('catalogo');
             if (catalogEl) catalogEl.scrollIntoView({ behavior: 'smooth' });
           }}
-          onExploreSimulator={() => {
-            const simEl = document.getElementById('simulador');
-            if (simEl) simEl.scrollIntoView({ behavior: 'smooth' });
-          }}
+          onContactWhatsApp={handleContactWhatsApp}
         />
 
-        {/* 2. Propuestas de Valor */}
+        {/* 2. Propuestas de Valor de Ebanistería */}
         <ValueProps />
 
-        {/* 3. Simulador de Espacios & Ambientes en Vivo */}
-        <div id="simulador">
-          <RoomSimulator whatsappNumber={APP_CONFIG.whatsappNumber} />
-        </div>
+        {/* 3. Proceso Artesanal & Secado al Horno (8-10%) */}
+        <CraftsmanshipSection />
 
-        {/* 4. Catálogo Moderno con Buscador Instantáneo y Cotizador */}
-        <ModernProductCatalog 
+        {/* 4. Catálogo Informativo Protegido con Marca de Agua */}
+        <InformationalCatalog 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
-          cart={cart}
-          onAddToCart={handleAddToCart}
         />
 
-        {/* 5. Acerca de Maderas Melgar */}
+        {/* 5. Protección Legal de Propiedad Intelectual */}
+        <CopyrightNotice />
+
+        {/* 6. Acerca de Maderas Melgar */}
         <AboutBrand />
 
-        {/* 6. Testimonios de Clientes */}
+        {/* 7. Opiniones de Clientes */}
         <Testimonials />
 
-        {/* 7. Contacto & Ubicación Showroom */}
+        {/* 8. Contacto & Ubicación Showroom en Quito */}
         <ContactSection 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           locationAddress={APP_CONFIG.location.addressLine}
         />
+
       </main>
 
-      {/* Modal de Producto Protegido */}
+      {/* Footer Corporativo con Enlaces SEO */}
+      <Footer 
+        companyName={APP_CONFIG.companyName}
+        whatsappNumber={APP_CONFIG.whatsappNumber}
+      />
+
+      {/* Modal Informativo de Ficha Técnica */}
       {selectedProduct && (
         <ProductModal 
           product={selectedProduct}
@@ -102,19 +96,11 @@ export default function HomePage() {
         />
       )}
 
-      {/* Cotizador Multiproducto (Drawer Flotante) */}
-      <MultiQuoteCart 
-        cart={cart}
-        onRemoveFromCart={handleRemoveFromCart}
-        onClearCart={handleClearCart}
-        whatsappNumber={APP_CONFIG.whatsappNumber}
-      />
+      {/* Protección de Seguridad & Clic Derecho */}
+      <SecurityGuard />
 
       {/* Botón Flotante WhatsApp */}
       <FloatingWhatsApp whatsappNumber={APP_CONFIG.whatsappNumber} />
-
-      {/* Pie de Página */}
-      <Footer />
 
     </div>
   );
