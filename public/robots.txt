@@ -1,0 +1,23 @@
+# Robots.txt for Melgar Maderas (melgarmaderas.com.ec)
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*?*
+
+# Allow AI & LLM Search Crawlers for Generative Engine Optimization (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://melgarmaderas.com.ec/sitemap.xml
