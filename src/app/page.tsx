@@ -7,10 +7,10 @@ import { Header } from '@/components/Header';
 import { ModernHero } from '@/components/ModernHero';
 import { WoodSpecSheet } from '@/components/WoodSpecSheet';
 import { ModernProductCatalog } from '@/components/ModernProductCatalog';
-import { CopyrightNotice } from '@/components/CopyrightNotice';
-import { AboutBrand } from '@/components/AboutBrand';
-import { Testimonials } from '@/components/Testimonials';
-import { ContactSection } from '@/components/ContactSection';
+import { ModernCopyrightNotice } from '@/components/ModernCopyrightNotice';
+import { ModernAboutBrand } from '@/components/ModernAboutBrand';
+import { ModernTestimonials } from '@/components/ModernTestimonials';
+import { ModernContactSection } from '@/components/ModernContactSection';
 import { ProductModal } from '@/components/ProductModal';
 import { SecurityGuard } from '@/components/SecurityGuard';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
@@ -39,7 +39,7 @@ export default function HomePage() {
         }
       />
 
-      {/* Secciones Informativas Únicas de Propuesta 2 */}
+      {/* Secciones 100% Obsidian Oscuro de Propuesta 2 */}
       <main style={{ flexGrow: 1 }}>
         
         {/* 1. Hero Moderno Arquitectónico */}
@@ -51,7 +51,7 @@ export default function HomePage() {
           onContactWhatsApp={handleContactWhatsApp}
         />
 
-        {/* 2. Módulo Técnico Interactivo de Maderas Nobles (EXCLUSIVO PROPUESTA 2) */}
+        {/* 2. Inspector Técnico Interactivo de Maderas Nobles (EXCLUSIVO PROPUESTA 2) */}
         <WoodSpecSheet />
 
         {/* 3. Muestrario Bento Grid Arquitectónico Protegido con Marca de Agua */}
@@ -60,17 +60,17 @@ export default function HomePage() {
           onSelectProduct={(product: Product) => setSelectedProduct(product)}
         />
 
-        {/* 4. Protección Legal de Propiedad Intelectual */}
-        <CopyrightNotice />
+        {/* 4. Protección Legal de Propiedad Intelectual en Modo Oscuro */}
+        <ModernCopyrightNotice />
 
-        {/* 5. Acerca de Maderas Melgar */}
-        <AboutBrand />
+        {/* 5. Taller Ebanista & Historia en Modo Oscuro */}
+        <ModernAboutBrand />
 
-        {/* 6. Testimonios */}
-        <Testimonials />
+        {/* 6. Testimonios en Modo Oscuro */}
+        <ModernTestimonials />
 
-        {/* 7. Contacto & Ubicación Showroom en Quito */}
-        <ContactSection 
+        {/* 7. Contacto & Ubicación Showroom Quito en Modo Oscuro */}
+        <ModernContactSection 
           whatsappNumber={APP_CONFIG.whatsappNumber}
           locationAddress={APP_CONFIG.location.addressLine}
         />
