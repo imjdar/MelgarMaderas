@@ -6,19 +6,28 @@ import { ShieldCheck } from 'lucide-react';
 
 interface WatermarkImageProps extends Omit<ImageProps, 'onError'> {
   domainWatermark?: string;
+  watermarkText?: string;
   showProtectionBadge?: boolean;
+  aspectRatio?: string;
+  onShieldClick?: () => void;
 }
 
 export const WatermarkImage: React.FC<WatermarkImageProps> = ({
   src,
   alt,
   domainWatermark = 'melgarmaderas.com.ec',
+  watermarkText,
   showProtectionBadge = false,
+  aspectRatio,
+  onShieldClick,
   style,
   className,
+  width = 800,
+  height = 600,
   ...props
 }) => {
   const [hasError, setHasError] = useState(false);
+  const watermarkLabel = watermarkText || domainWatermark;
 
   return (
     <div 
@@ -32,6 +41,7 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
         WebkitUserSelect: 'none',
         MozUserSelect: 'none',
         msUserSelect: 'none',
+        aspectRatio: aspectRatio || undefined,
         ...style
       }}
     >
@@ -66,13 +76,15 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
             {alt}
           </div>
           <div style={{ fontSize: '0.75rem', color: '#8E847A', marginTop: '0.5rem' }}>
-            Diseño Exclusivo • {domainWatermark}
+            Diseño Exclusivo • {watermarkLabel}
           </div>
         </div>
       ) : (
         <Image
           src={src}
           alt={alt}
+          width={width}
+          height={height}
           onError={() => setHasError(true)}
           {...props}
         />
@@ -80,6 +92,7 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
 
       {/* Capa de Marca de Agua Indeleble Anti-Copia */}
       <div 
+        onClick={onShieldClick}
         style={{
           position: 'absolute',
           bottom: '0.75rem',
@@ -94,7 +107,8 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
           fontSize: '0.7rem',
           fontWeight: 700,
           letterSpacing: '0.08em',
-          pointerEvents: 'none',
+          pointerEvents: onShieldClick ? 'auto' : 'none',
+          cursor: onShieldClick ? 'pointer' : 'default',
           zIndex: 10,
           display: 'flex',
           alignItems: 'center',
@@ -103,7 +117,7 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
         }}
       >
         <ShieldCheck size={12} color="#C59B27" />
-        <span>{domainWatermark}</span>
+        <span>{watermarkLabel}</span>
       </div>
 
       {/* Marca de Agua Diagonal Sutil Central */}
@@ -128,7 +142,7 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
           letterSpacing: '0.2em',
           whiteSpace: 'nowrap'
         }}>
-          {domainWatermark}
+          {watermarkLabel}
         </span>
       </div>
     </div>

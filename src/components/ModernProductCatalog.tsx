@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { PRODUCTS, CATEGORIES } from '@/data/products';
 import { Product } from '@/types';
 import { WatermarkImage } from './WatermarkImage';
-import { Search, LayoutGrid, List, MessageCircle, Eye, ShieldCheck, Sparkles } from 'lucide-react';
+import { Search, LayoutGrid, List, MessageCircle, Eye, Sparkles } from 'lucide-react';
 import { buildWhatsAppUrl } from '@/services/whatsappService';
 
 interface ModernProductCatalogProps {
@@ -23,13 +23,13 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
   const filteredProducts = PRODUCTS.filter(p => {
     const matchesCategory = activeCategory === 'todos' || p.category === activeCategory;
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          p.woodType.toLowerCase().includes(searchQuery.toLowerCase());
+                          p.shortDesc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          p.material.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   const handleConsultProduct = (product: Product) => {
-    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Deseo solicitar una cotización personalizada para el modelo: *${product.name}* (${product.woodType}).`;
+    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Deseo solicitar una cotización personalizada para el modelo: *${product.name}* (${product.material}).`;
     window.open(buildWhatsAppUrl(whatsappNumber, text), '_blank');
   };
 
@@ -170,7 +170,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
                 backgroundColor: '#101316'
               }}>
                 <WatermarkImage
-                  src={product.imageUrl}
+                  src={product.image}
                   alt={`${product.name} - Maderas Melgar`}
                   width={600}
                   height={400}
@@ -189,7 +189,7 @@ export const ModernProductCatalog: React.FC<ModernProductCatalogProps> = ({
                 </h3>
 
                 <p style={{ fontSize: '0.85rem', color: '#9CA3AF', lineHeight: 1.6, marginBottom: '1.25rem', flexGrow: 1 }}>
-                  {product.description}
+                  {product.shortDesc}
                 </p>
 
                 <div style={{ display: 'flex', gap: '0.75rem' }}>

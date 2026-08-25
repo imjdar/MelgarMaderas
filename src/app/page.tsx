@@ -82,10 +82,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer Corporativo */}
-      <Footer 
-        companyName={APP_CONFIG.companyName}
-        whatsappNumber={APP_CONFIG.whatsappNumber}
-      />
+      <Footer />
 
       {/* Modal Informativo de Ficha Técnica */}
       {selectedProduct && (

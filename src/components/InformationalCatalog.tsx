@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { PRODUCTS, CATEGORIES } from '@/data/products';
 import { Product } from '@/types';
 import { WatermarkImage } from './WatermarkImage';
-import { MessageCircle, ShieldCheck, Eye, Sparkles } from 'lucide-react';
+import { MessageCircle, Eye, Sparkles } from 'lucide-react';
 import { buildWhatsAppUrl } from '@/services/whatsappService';
 
 interface InformationalCatalogProps {
@@ -23,7 +23,7 @@ export const InformationalCatalog: React.FC<InformationalCatalogProps> = ({
     : PRODUCTS.filter(p => p.category === activeCategory);
 
   const handleConsultProduct = (product: Product) => {
-    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Me interesa solicitar una cotización personalizada para el producto: *${product.name}* (Material: ${product.woodType}). ¿Podrían brindarme información y disponibilidad?`;
+    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Me interesa solicitar una cotización personalizada para el producto: *${product.name}* (Material: ${product.material}). ¿Podrían brindarme información y disponibilidad?`;
     window.open(buildWhatsAppUrl(whatsappNumber, text), '_blank');
   };
 
@@ -100,7 +100,7 @@ export const InformationalCatalog: React.FC<InformationalCatalogProps> = ({
               {/* Contenedor de Imagen con Marca de Agua Protegida */}
               <div style={{ position: 'relative', minHeight: '260px', backgroundColor: '#1A0C06' }}>
                 <WatermarkImage
-                  src={product.imageUrl}
+                  src={product.image}
                   alt={`${product.name} - Maderas Melgar Quito`}
                   width={600}
                   height={400}
@@ -144,7 +144,7 @@ export const InformationalCatalog: React.FC<InformationalCatalogProps> = ({
                   marginBottom: '1.25rem',
                   flexGrow: 1
                 }}>
-                  {product.description}
+                  {product.shortDesc}
                 </p>
 
                 {/* Etiquetas de Especificación Técnica */}
@@ -160,7 +160,7 @@ export const InformationalCatalog: React.FC<InformationalCatalogProps> = ({
                   marginBottom: '1.25rem'
                 }}>
                   <Sparkles size={14} color="#C59B27" />
-                  <span>Madera: <strong>{product.woodType}</strong></span>
+                  <span>Madera: <strong>{product.material}</strong></span>
                   <span style={{ margin: '0 0.25rem' }}>•</span>
                   <span>Secado: <strong>8-10% Horno</strong></span>
                 </div>
