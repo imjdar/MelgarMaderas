@@ -1,7 +1,4 @@
 {
-  "version": 2,
-  "framework": "vite",
-  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -36,12 +33,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
