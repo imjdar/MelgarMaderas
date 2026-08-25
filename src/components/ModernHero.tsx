@@ -161,7 +161,7 @@ export const ModernHero: React.FC<ModernHeroProps> = ({
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#F59E0B', fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>
                   <MapPin size={12} /> Ubicación
                 </div>
-                <div style={{ fontSize: '1.05rem', fontWeight 900, color: '#FFFFFF', marginTop: '0.2rem' }}>Quito Taller</div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 900, color: '#FFFFFF', marginTop: '0.2rem' }}>Quito Taller</div>
               </div>
             </div>
 
