@@ -10,6 +10,7 @@ interface WatermarkImageProps extends Omit<ImageProps, 'onError'> {
   showProtectionBadge?: boolean;
   aspectRatio?: string;
   onShieldClick?: () => void;
+  imageClassName?: string;
 }
 
 export const WatermarkImage: React.FC<WatermarkImageProps> = ({
@@ -20,6 +21,7 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
   showProtectionBadge = false,
   aspectRatio,
   onShieldClick,
+  imageClassName,
   style,
   className,
   width = 800,
@@ -86,6 +88,7 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
           width={width}
           height={height}
           onError={() => setHasError(true)}
+          className={`w-full h-full ${imageClassName?.includes('object-') ? imageClassName : 'object-contain ' + (imageClassName || '')}`}
           {...props}
         />
       )}

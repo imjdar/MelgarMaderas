@@ -1,100 +1,106 @@
 'use client';
-
 import React, { useState } from 'react';
 import { APP_CONFIG } from '@/services/configService';
 import { Product } from '@/types';
-import { Header } from '@/components/Header';
-import { ModernHero } from '@/components/ModernHero';
-import { WoodSpecSheet } from '@/components/WoodSpecSheet';
-import { ModernProductCatalog } from '@/components/ModernProductCatalog';
-import { ModernCopyrightNotice } from '@/components/ModernCopyrightNotice';
-import { ModernAboutBrand } from '@/components/ModernAboutBrand';
-import { ModernTestimonials } from '@/components/ModernTestimonials';
-import { ModernContactSection } from '@/components/ModernContactSection';
-import { ProductModal } from '@/components/ProductModal';
-import { SecurityGuard } from '@/components/SecurityGuard';
+
+import { LuxuryNavbar } from '@/components/LuxuryNavbar';
+import { EditorialHeroSlider } from '@/components/EditorialHeroSlider';
+import { CategoryShowcase } from '@/components/CategoryShowcase';
+import { CleanProductGrid } from '@/components/CleanProductGrid';
+import { BrandPhilosophy } from '@/components/BrandPhilosophy';
+import { MinimalFooter } from '@/components/MinimalFooter';
+import { MultiQuoteCart } from '@/components/MultiQuoteCart';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
-import { Footer } from '@/components/Footer';
-import { Sparkles } from 'lucide-react';
+import { SecurityGuard } from '@/components/SecurityGuard';
+import { SocialContactSection } from '@/components/SocialContactSection';
 
+/**
+ * Propuesta 2: REDISEÑO TOTAL EDITORIAL LUXURY
+ * Inspirado en Colineal, Adriana Hoyos y diseño asimétrico minimalista.
+ * Base Cream Ivory #FDFBF7 y tipografías Cormorant Garamond / Inter.
+ */
 export default function HomePage() {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [multiCart, setMultiCart] = useState<Product[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const handleContactWhatsApp = () => {
-    const text = `Hola Maderas Melgar (melgarmaderas.com.ec). Me gustaría consultar sobre cotizaciones a medida para proyectos arquitectónicos en Quito.`;
-    window.open(`https://wa.me/${APP_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  const handleAddToCart = (product: Product) => {
+    setMultiCart((prev) => {
+      if (prev.some((p) => p.id === product.id)) {
+        return prev.filter((p) => p.id !== product.id);
+      }
+      return [...prev, product];
+    });
+    setIsCartOpen(true);
+  };
+
+  const handleRemoveFromCart = (productId: string) => {
+    setMultiCart((prev) => prev.filter((p) => p.id !== productId));
+  };
+
+  const handleClearCart = () => {
+    setMultiCart([]);
   };
 
   return (
-    <div className="app-main-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#0B0D0E' }}>
-      
-      {/* Header Corporativo para Propuesta 2 */}
-      <Header 
-        whatsappNumber={APP_CONFIG.whatsappNumber}
-        bannerText={
-          <>
-            <Sparkles size={14} color="#F59E0B" />
-            <span>PROPUESTA 2: <strong>Arquitectura Contemporánea & Maderería de Vanguardia</strong> • melgarmaderas.com.ec</span>
-          </>
-        }
+    <div
+      className="app-main-wrapper"
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: '#FDFBF7',
+        color: '#3A1A0E',
+      }}
+    >
+      {/* 1. Header Minimalista Espacioso */}
+      <LuxuryNavbar 
+        whatsappNumber={APP_CONFIG.whatsappNumber} 
+        cartCount={multiCart.length}
+        onOpenCart={() => setIsCartOpen(true)}
       />
 
-      {/* Secciones 100% Obsidian Oscuro de Propuesta 2 */}
       <main style={{ flexGrow: 1 }}>
         
-        {/* 1. Hero Moderno Arquitectónico */}
-        <ModernHero 
-          onExploreCatalog={() => {
-            const catalogEl = document.getElementById('catalogo');
-            if (catalogEl) catalogEl.scrollIntoView({ behavior: 'smooth' });
-          }}
-          onContactWhatsApp={handleContactWhatsApp}
+        {/* 2. Hero Editorial (Slider a Pantalla Completa) */}
+        <EditorialHeroSlider />
+
+        {/* 3. Muestrario de Categorías Asimétrico */}
+        <CategoryShowcase />
+
+        {/* 4. Grilla de Productos Limpia y Espaciosa */}
+        <CleanProductGrid 
+          onAddToCart={handleAddToCart}
+          cartProductIds={multiCart.map(p => p.id)}
         />
 
-        {/* 2. Inspector Técnico Interactivo de Maderas Nobles (EXCLUSIVO PROPUESTA 2) */}
-        <WoodSpecSheet />
-
-        {/* 3. Muestrario Bento Grid Arquitectónico Protegido con Marca de Agua */}
-        <ModernProductCatalog 
-          whatsappNumber={APP_CONFIG.whatsappNumber}
-          onSelectProduct={(product: Product) => setSelectedProduct(product)}
-        />
-
-        {/* 4. Protección Legal de Propiedad Intelectual en Modo Oscuro */}
-        <ModernCopyrightNotice />
-
-        {/* 5. Taller Ebanista & Historia en Modo Oscuro */}
-        <ModernAboutBrand />
-
-        {/* 6. Testimonios en Modo Oscuro */}
-        <ModernTestimonials />
-
-        {/* 7. Contacto & Ubicación Showroom Quito en Modo Oscuro */}
-        <ModernContactSection 
-          whatsappNumber={APP_CONFIG.whatsappNumber}
-          locationAddress={APP_CONFIG.location.addressLine}
-        />
+        {/* 5. Filosofía de Marca y Ebanistería */}
+        <BrandPhilosophy />
 
       </main>
 
-      {/* Footer Corporativo */}
-      <Footer />
+      {/* 5.5 Sección de Contacto y Redes Oficiales */}
+      <SocialContactSection />
 
-      {/* Modal Informativo de Ficha Técnica */}
-      {selectedProduct && (
-        <ProductModal 
-          product={selectedProduct}
-          whatsappNumber={APP_CONFIG.whatsappNumber}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
+      {/* 6. Footer Minimalista Clásico */}
+      <MinimalFooter />
 
-      {/* Protección de Clic Derecho & Marca de Agua */}
+      {/* COMPONENTES FLOTANTES Y SEGURIDAD */}
+
+      {/* Cajón Lateral Flotante para Cotización Agrupada (Multi-Quote Cart) */}
+      <MultiQuoteCart
+        cart={multiCart}
+        onRemoveFromCart={handleRemoveFromCart}
+        onClearCart={handleClearCart}
+        whatsappNumber={APP_CONFIG.whatsappNumber}
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+      />
+
+      {/* Protección de Clic Derecho & Atajos de Inspección */}
       <SecurityGuard />
 
-      {/* Botón Flotante WhatsApp */}
+      {/* Botón Flotante Directo de WhatsApp */}
       <FloatingWhatsApp whatsappNumber={APP_CONFIG.whatsappNumber} />
-
     </div>
   );
 }
