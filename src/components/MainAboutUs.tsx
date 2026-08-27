@@ -51,11 +51,11 @@ export function MainAboutUs() {
           
           <div style={{ position: 'relative', zIndex: 1, borderRadius: '4px', overflow: 'hidden', boxShadow: 'var(--shadow-xl)' }}>
             <WatermarkImage
-              src="/assets/products/seike-table.jpg"
+              src="/assets/products/comedor-artesanal.jpg"
               alt="Artesanía y detalle en Maderas Melgar"
               width={600}
               height={800}
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '3/4' }}
+              style={{ width: '100%', height: 'auto', objectFit: 'contain', backgroundColor: 'var(--color-dark-bg)' }}
               showProtectionBadge={true}
             />
           </div>

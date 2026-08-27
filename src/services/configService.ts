@@ -12,7 +12,7 @@ export const APP_CONFIG: AppConfig = {
   slogan: 'Muebles que traspasan épocas',
 
   // Configuración de WhatsApp (Actualizable por el usuario)
-  whatsappNumber: '',
+  whatsappNumber: '593991234567',
 
   // Ubicación Configurable (Quito, Ecuador)
   location: {

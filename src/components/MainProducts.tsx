@@ -14,7 +14,7 @@ export function MainProducts() {
       title: 'Habitaciones',
       subtitle: 'Camas • Veladores • Closets • Tocadores',
       desc: 'Diseñamos dormitorios que invitan al descanso. Nuestras camas de madera maciza garantizan estabilidad y durabilidad, complementadas con veladores y armarios a medida.',
-      image: '/assets/products/cama-king.jpg'
+      image: '/assets/products/cama-king-imperial.jpg'
     },
     sala: {
       title: 'Sala de Estar',
@@ -26,7 +26,7 @@ export function MainProducts() {
       title: 'Comedor',
       subtitle: 'Mesas • Sillas',
       desc: 'Mesas imperiales y sillas ergonómicas construidas para resistir el uso diario. Fabricamos comedores de 4 a 12 puestos según tus necesidades de espacio.',
-      image: '/assets/products/seike-table.jpg'
+      image: '/assets/products/comedor-artesanal.jpg'
     },
     cocina: {
       title: 'Cocina',
@@ -101,7 +101,7 @@ export function MainProducts() {
               alt={currentCategory.title}
               width={800}
               height={600}
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '4/3' }}
+              style={{ width: '100%', height: 'auto', objectFit: 'contain', backgroundColor: 'var(--color-dark-bg)' }}
               showProtectionBadge={true}
             />
           </div>

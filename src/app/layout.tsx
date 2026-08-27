@@ -3,6 +3,12 @@ import './globals.css';
 import { getFurnitureStoreSchema } from '@/services/schemaService';
 import { SecurityGuard } from '@/components/SecurityGuard';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://melgarmaderas.com.ec'),
   title: 'Maderas Melgar | Muebles que traspasan épocas - Catálogo Oficial Ecuador',

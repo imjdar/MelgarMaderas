@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import { APP_CONFIG } from '@/services/configService';
 
 export function MainHeader() {
@@ -50,27 +51,16 @@ export function MainHeader() {
         {/* Logo */}
         <div 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
+          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
         >
-          <span style={{ 
-            fontFamily: 'var(--font-heading)', 
-            fontSize: '1.5rem', 
-            fontWeight: 800, 
-            letterSpacing: '0.05em',
-            color: 'var(--color-wood-dark)',
-            lineHeight: 1.1
-          }}>
-            MADERAS MELGAR
-          </span>
-          <span style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.7rem',
-            letterSpacing: '0.25em',
-            color: 'var(--color-text-muted)',
-            textTransform: 'uppercase'
-          }}>
-            Muebles que traspasan épocas
-          </span>
+          <Image 
+            src="/assets/branding/logo-full.png"
+            alt="Maderas Melgar"
+            width={180}
+            height={50}
+            style={{ width: 'auto', height: '40px', objectFit: 'contain' }}
+            priority
+          />
         </div>
 
         {/* Desktop Nav */}
