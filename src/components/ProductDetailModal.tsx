@@ -71,7 +71,7 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
           <div className="w-12 h-px bg-[#0D6838] mb-8"></div>
           
           <p className="text-gray-600 font-light leading-relaxed mb-10">
-            {product.description}
+            {product.fullDesc}
           </p>
           
           <div className="space-y-4 mb-10">
