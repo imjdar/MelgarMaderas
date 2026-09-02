@@ -12,6 +12,8 @@ import { MinimalFooter } from '@/components/MinimalFooter';
 import { MultiQuoteCart } from '@/components/MultiQuoteCart';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { SecurityGuard } from '@/components/SecurityGuard';
+import { NosotrosSection } from '@/components/NosotrosSection';
+import { FabricaSection } from '@/components/FabricaSection';
 import { SocialContactSection } from '@/components/SocialContactSection';
 
 /**
@@ -64,6 +66,9 @@ export default function HomePage() {
         {/* 2. Hero Editorial (Slider a Pantalla Completa) */}
         <EditorialHeroSlider />
 
+        {/* 2.5 Nosotros & Filosofía */}
+        <NosotrosSection />
+
         {/* 3. Muestrario de Categorías Asimétrico */}
         <CategoryShowcase />
 
@@ -75,6 +80,9 @@ export default function HomePage() {
 
         {/* 5. Filosofía de Marca y Ebanistería */}
         <BrandPhilosophy />
+        
+        {/* 5.2 Fábrica y Elaboración */}
+        <FabricaSection />
 
       </main>
 
