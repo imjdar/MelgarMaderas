@@ -60,13 +60,14 @@ export function LuxuryNavbar({ whatsappNumber, cartCount = 0, onOpenCart }: Luxu
 
         {/* Center Logo */}
         <div className="flex justify-center w-1/3 py-1">
-          <a href="#" className="flex items-center transition-opacity hover:opacity-80">
+          <a href="#" className="flex items-center transition-transform hover:scale-[1.65]" style={{ transform: 'scale(1.6)' }}>
             <Image 
               src="/assets/branding/logo-full.png" 
               alt="Melgar Maderas Logo" 
-              width={220} 
-              height={70} 
+              width={250} 
+              height={220} 
               className="object-contain"
+              style={{ width: 'auto', height: '55px' }}
               priority
             />
           </a>
