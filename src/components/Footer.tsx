@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ShieldCheck, ArrowUp } from 'lucide-react';
+import { ShieldCheck, ArrowUp, Phone } from 'lucide-react';
 import { APP_CONFIG } from '@/services/configService';
 
 export const Footer: React.FC = () => {
@@ -50,41 +50,19 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div>
             <h4 style={{ fontSize: '1.05rem', color: '#FFFFFF', marginBottom: '1.25rem', fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}>
-              Navegación del Muestrario
+              Navegación
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
-              <li><a href="#inicio" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Inicio Arquitectónico</a></li>
-              <li><a href="#catalogo" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Catálogo Bento</a></li>
-              <li><a href="#calidad" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Ficha Técnica & Humedad (8-10%)</a></li>
-              <li><a href="#nosotros" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Taller & Planta Quito</a></li>
-              <li><a href="#contacto" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Showroom & Cotizaciones</a></li>
+              <li><a href="/" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Inicio</a></li>
+              <li><a href="/quienes-somos" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Quiénes Somos</a></li>
+              <li><a href="/productos" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Catálogo</a></li>
+              <li><a href="/fabrica" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Fábrica</a></li>
+              <li><a href="/ubicacion" style={{ color: '#D1D5DB', transition: 'color 0.2s' }}>Contacto y Ubicaciones</a></li>
             </ul>
           </div>
 
-          <div>
-            <h4 style={{ fontSize: '1.05rem', color: '#FFFFFF', marginBottom: '1.25rem', fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}>
-              Protección de Modelos
-            </h4>
-            <div 
-              style={{
-                backgroundColor: '#14181D',
-                padding: '1.25rem',
-                borderRadius: '12px',
-                border: '1px solid rgba(245, 158, 11, 0.3)',
-                fontSize: '0.85rem',
-                color: '#9CA3AF',
-                lineHeight: '1.5'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#F59E0B', fontWeight: '800', marginBottom: '0.5rem' }}>
-                <ShieldCheck size={18} />
-                <span>Imágenes con Sello Digital</span>
-              </div>
-              Los catálogos, fotografías y especificaciones expuestas en <strong>melgarmaderas.com.ec</strong> pertenecen exclusivamente a Maderas Melgar. Prohibida la copia por competidores.
-            </div>
-          </div>
+
 
         </div>
 
@@ -105,8 +83,12 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} <strong style={{ color: '#FFFFFF' }}>Maderas Melgar</strong> ({APP_CONFIG.domain}). Todos los derechos reservados.
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
             <span style={{ color: '#F59E0B', fontWeight: 600 }}>Estudio Arquitectónico • Quito, Ecuador</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#D1D5DB' }}>
+              <Phone size={16} />
+              <span style={{ fontFamily: 'Inter, sans-serif' }}>{APP_CONFIG.whatsappNumber}</span>
+            </div>
             
             <button
               onClick={scrollToTop}

@@ -6,7 +6,7 @@
 export interface Product {
   id: string;
   name: string;
-  category: 'sala' | 'comedor' | 'habitaciones' | 'cocina' | 'estudio';
+  category: 'sala' | 'comedor' | 'habitaciones' | 'cocina' | 'estudio' | 'complementos';
   categoryLabel: string;
   image: string;
   shortDesc: string;

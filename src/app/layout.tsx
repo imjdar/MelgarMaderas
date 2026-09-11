@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { getFurnitureStoreSchema } from '@/services/schemaService';
-import { SecurityGuard } from '@/components/SecurityGuard';
+
+import { ClientLayout } from '@/components/ClientLayout';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://melgarmaderas.com.ec'),
+  metadataBase: new URL('https://maderasmelgar.com.ec'),
   title: 'Maderas Melgar | Muebles que traspasan épocas - Catálogo Oficial Ecuador',
   description: 'Maderas Melgar: Muebles de madera maciza de alta gama en Ecuador. Fabricación artesanal a medida para salas, comedores, habitaciones y cocinas. Muebles que traspasan épocas.',
-  keywords: ['Maderas Melgar', 'muebles de madera Ecuador', 'muebles de lujo Quito', 'catálogo muebles macizos', 'juegos de sala madera', 'melgarmaderas.com.ec'],
+  keywords: ['Maderas Melgar', 'muebles de madera Ecuador', 'muebles de lujo Quito', 'catálogo muebles macizos', 'juegos de sala madera', 'maderasmelgar.com.ec'],
   authors: [{ name: 'Maderas Melgar' }],
   robots: {
     index: true,
@@ -19,16 +20,16 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    canonical: 'https://melgarmaderas.com.ec/'
+    canonical: 'https://maderasmelgar.com.ec/'
   },
   openGraph: {
     type: 'website',
-    url: 'https://melgarmaderas.com.ec/',
+    url: 'https://maderasmelgar.com.ec/',
     title: 'Maderas Melgar | Muebles que traspasan épocas',
     description: 'Descubra nuestro catálogo exclusivo de muebles de madera maciza trabajados artesanalmente en Ecuador.',
     images: [
       {
-        url: 'https://melgarmaderas.com.ec/assets/products/sala-linea-premium.jpg',
+        url: 'https://maderasmelgar.com.ec/assets/products/sala-linea-premium.jpg',
         width: 1200,
         height: 630,
         alt: 'Maderas Melgar Muebles de Madera Maciza'
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Maderas Melgar | Muebles que traspasan épocas',
     description: 'Diseño y fabricación de muebles de madera de alta gama en Ecuador.',
-    images: ['https://melgarmaderas.com.ec/assets/products/sala-linea-premium.jpg']
+    images: ['https://maderasmelgar.com.ec/assets/products/sala-linea-premium.jpg']
   }
 };
 
@@ -65,8 +66,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <SecurityGuard />
-        {children}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );

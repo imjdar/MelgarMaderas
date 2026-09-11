@@ -28,14 +28,14 @@ export function LuxuryNavbar({ whatsappNumber, cartCount = 0, onOpenCart }: Luxu
   };
 
   const navLinksLeft = [
-    { label: 'Quiénes Somos', href: '#nosotros' },
-    { label: 'Misión y Visión', href: '#mision' },
-    { label: 'Productos', href: '#productos' }
+    { label: 'Inicio', href: '/' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Productos', href: '/productos' }
   ];
 
   const navLinksRight = [
-    { label: 'Fábrica', href: '#fabrica' },
-    { label: 'Ubicación', href: '#ubicacion' }
+    { label: 'Fábrica', href: '/fabrica' },
+    { label: 'Contacto', href: '/ubicacion' }
   ];
 
   return (
@@ -45,37 +45,22 @@ export function LuxuryNavbar({ whatsappNumber, cartCount = 0, onOpenCart }: Luxu
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-12 flex justify-between items-center min-h-[40px]">
         
-        {/* Left Links (Desktop) */}
-        <div className="hidden lg:flex items-center space-x-6 w-1/3">
-          {navLinksLeft.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-xs tracking-wide text-[#3A1A0E] hover:text-[#C59B27] transition-colors uppercase"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        {/* Center Logo */}
-        <div className="flex justify-center w-1/3 py-1">
-          <a href="#" className="flex items-center transition-transform hover:scale-[1.65]" style={{ transform: 'scale(1.6)' }}>
+        <div className="flex justify-start w-1/4 py-2">
+          <a href="/" className="flex items-center transition-transform hover:scale-105">
             <Image 
-              src="/assets/branding/logo-full.png" 
+              src="/assets/branding/logo-slogan.png" 
               alt="Melgar Maderas Logo" 
               width={250} 
-              height={220} 
-              className="object-contain"
-              style={{ width: 'auto', height: '55px' }}
+              height={80} 
+              className="object-contain w-auto h-16 md:h-20"
               priority
             />
           </a>
         </div>
 
-        {/* Right Links & CTA (Desktop) */}
-        <div className="hidden lg:flex items-center justify-end space-x-6 w-1/3">
-          {navLinksRight.map((link) => (
+        {/* Center Links (Desktop) */}
+        <div className="hidden lg:flex items-center justify-center space-x-8 w-2/4">
+          {[...navLinksLeft, ...navLinksRight].map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -84,6 +69,10 @@ export function LuxuryNavbar({ whatsappNumber, cartCount = 0, onOpenCart }: Luxu
               {link.label}
             </a>
           ))}
+        </div>
+
+        {/* Right CTA (Desktop) */}
+        <div className="hidden lg:flex items-center justify-end space-x-6 w-1/4">
           <button
             onClick={handleWhatsApp}
             className="flex items-center justify-center p-1 text-[#25D366] hover:text-[#128C7E] transition-colors"

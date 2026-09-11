@@ -1,12 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
-import { SecurityGuard } from './SecurityGuard';
+
 import { WatermarkImage } from './WatermarkImage';
 
 const slides = [
   {
-    image: '/assets/products/sala-linea-premium.jpg',
+    image: '/assets/products/sala-entretenimiento.jpg',
     title: 'Nueva Colección Seike',
     subtitle: 'Muebles que traspasan épocas'
   },
@@ -93,7 +93,7 @@ export function EditorialHeroSlider() {
         ))}
       </div>
       
-      <SecurityGuard />
+
     </section>
   );
 }

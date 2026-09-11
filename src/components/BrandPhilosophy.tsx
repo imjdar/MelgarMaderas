@@ -13,7 +13,7 @@ export function BrandPhilosophy() {
     {
       icon: <Droplets className="w-6 h-6 mb-4 text-[#0D6838]" />,
       title: 'Secado al Horno',
-      desc: 'Control estricto de humedad (8-10%) para garantizar estructuras firmes, indeformables y libres de polillas.'
+      desc: 'Control estricto de humedad (8-10%) para garantizar estructuras firmes, de madera sólida y libres de polillas.'
     },
     {
       icon: <Ruler className="w-6 h-6 mb-4 text-[#0D6838]" />,
@@ -57,10 +57,10 @@ export function BrandPhilosophy() {
             <div className="absolute inset-0 bg-[#0D6838] transform translate-x-4 translate-y-4"></div>
             <div className="relative w-full h-full bg-gray-200 overflow-hidden">
               <WatermarkImage
-                src="/assets/products/escritorio-ejecutivo.jpg"
+                src="/assets/products/fabrica-1.jpeg"
                 alt="Proceso Ebanista de Melgar Maderas"
                 className="w-full h-full"
-                imageClassName="object-contain"
+                imageClassName="object-cover"
               />
             </div>
           </div>

@@ -54,7 +54,7 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
             src={product.image}
             alt={product.name}
             className="w-full h-full"
-            imageClassName="object-contain bg-gray-100"
+            imageClassName="object-cover grayscale contrast-125 bg-gray-100"
           />
         </div>
 

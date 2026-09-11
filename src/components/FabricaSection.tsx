@@ -17,9 +17,9 @@ export function FabricaSection() {
           {/* Photos place holders */}
           <div className="relative h-[400px] group bg-[#3A1A0E]">
             <WatermarkImage
-              src="/assets/products/cama-king-imperial.jpg" // Placeholder until real factory photo is provided
+              src="/assets/products/fabrica-1.jpeg" 
               alt="Fábrica de Muebles"
-              className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
               imageClassName="object-cover"
             />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -31,9 +31,9 @@ export function FabricaSection() {
 
           <div className="relative h-[400px] group bg-[#3A1A0E]">
             <WatermarkImage
-              src="/assets/products/sala-armonia.jpg" // Placeholder for tapestries
+              src="/assets/products/fabrica-2.jpeg"
               alt="Tapices de Alta Costura"
-              className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
               imageClassName="object-cover"
             />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -45,9 +45,9 @@ export function FabricaSection() {
 
           <div className="relative h-[400px] group bg-[#3A1A0E]">
             <WatermarkImage
-              src="/assets/products/escritorio-ejecutivo.jpg" // Placeholder for Sketch
+              src="/assets/products/fabrica-3.jpeg"
               alt="Boceto Sketch IA"
-              className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
               imageClassName="object-cover"
             />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

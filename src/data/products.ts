@@ -1,5 +1,6 @@
 /**
  * Dataset Oficial de Productos - Maderas Melgar (TypeScript)
+ * Información extraída del catálogo oficial proporcionado.
  */
 
 import { Product, Category } from '../types';
@@ -10,137 +11,190 @@ export const CATEGORIES: Category[] = [
   { id: 'comedor', label: 'Comedores' },
   { id: 'habitaciones', label: 'Habitaciones' },
   { id: 'cocina', label: 'Cocinas & Almacenamiento' },
-  { id: 'estudio', label: 'Estudio & Consolas' }
+  { id: 'estudio', label: 'Estudio & Consolas' },
+  { id: 'complementos', label: 'Complementos' }
 ];
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'sala-linea-premium',
-    name: 'Juego de Sala Línea Premium Melgar',
+    id: 'sala-halem',
+    name: 'Sala Halem',
+    category: 'sala',
+    categoryLabel: 'Sala de Estar',
+    image: '/assets/products/sala-armonia.jpg', 
+    shortDesc: 'Maderas cálidas, textiles suaves y tonos que evocan tierra, agua y tranquilidad.',
+    fullDesc: 'Una colección que lleva al interior del hogar la sensación de estar rodeado de naturaleza, combinando el carácter de la madera con líneas elegantes y atemporales. Diseñada para quedarse.',
+    material: 'Madera Sólida + Textiles Seleccionados',
+    dimensions: 'Diseño Modular a Medida',
+    features: [
+      'Líneas elegantes y atemporales',
+      'Tonos que evocan tierra, agua y tranquilidad',
+      'Textiles antifluido, chenil, microfibra o microcuero a elección'
+    ]
+  },
+  {
+    id: 'mesa-centro-halem',
+    name: 'Mesa de centro redonda Halem',
     category: 'sala',
     categoryLabel: 'Sala de Estar',
     image: '/assets/products/sala-linea-premium.jpg',
-    shortDesc: 'Conjunto de sofá de 3 puestos, 2 sillones ergonómicos y mesa de centro de diseño exclusivo en madera maciza.',
-    fullDesc: 'El Juego de Sala Línea Premium encarna la maestría artesanal de Maderas Melgar. Fabricado en madera maciza de Seike seleccionada a mano, tratada térmicamente al horno para garantizar máxima durabilidad. Su tapicería en textil anti-manchas complementa la nobleza de las vetas amaderadas oscuras.',
-    material: 'Madera Maciza de Seike / Roble + Poliuretano Mate High-Traffic',
-    dimensions: 'Sofá: 2.10m x 0.90m | Sillones: 0.85m x 0.85m | Mesa: 1.10m x 0.70m',
+    shortDesc: 'Mesa de centro circular con carácter amaderado y líneas atemporales.',
+    fullDesc: 'Complemento perfecto de la Colección Halem, que lleva al interior del hogar la sensación de estar rodeado de naturaleza.',
+    material: 'Madera Sólida',
+    dimensions: 'Diseño Circular',
     features: [
-      'Estructura 100% madera maciza con encamado reforzado',
-      'Acabado en poliuretano no tóxico resistente al desgaste',
-      'Cojines con espuma de alta densidad (30kg/m³)',
-      'Fabricación personalizada en dimensiones y tonos de tela'
+      'Líneas elegantes',
+      'Estructura de madera sólida (laurel negro del Oriente, seike, manzano colorado o roble)'
     ]
   },
   {
-    id: 'comedor-elegance',
-    name: 'Juego de Comedor Elegance 6 Sillas',
-    category: 'comedor',
-    categoryLabel: 'Comedor',
-    image: '/assets/products/comedor-elegance.jpg',
-    shortDesc: 'Mesa rectangular en acabado amaderado caoba con 6 sillas tapizadas de corte ergonómico.',
-    fullDesc: 'Diseñado para crear experiencias memorables en torno a la mesa. Elaborado con tablas macizas ensambladas a presión, ofreciendo una superficie impermeable y resistente a altas temperaturas.',
-    material: 'Madera Maciza de Laurel / Seike + Acabados Satinados',
-    dimensions: 'Mesa: 1.80m x 1.00m x 0.78m | Sillas: Standard Ergonómico',
-    features: [
-      'Superficie tratada con sellador poliuretánico antihumedad',
-      'Sillas con respaldo curvado para soporte lumbar prolongado',
-      'Opción de extensión para 8 o 10 personas a pedido'
-    ]
-  },
-  {
-    id: 'tocador-luxury',
-    name: 'Tocador Luxury con Espejo y Banco',
-    category: 'habitaciones',
-    categoryLabel: 'Habitación',
-    image: '/assets/products/tocador-luxury.jpg',
-    shortDesc: 'Mueble tocador de alta costura con espejo enmarcado en madera noble, cajones organizadores y banqueta.',
-    fullDesc: 'La elegancia clásica al servicio de su espacio personal. El tocador Luxury de Melgar destaca por su moldurado tradicional, herrajes de extracción suave y marco biselado de gran amplitud.',
-    material: 'Madera Maciza Amaderada Negra / Caoba',
-    dimensions: 'Ancho: 1.30m | Alto Total: 1.75m | Profundidad: 0.48m',
-    features: [
-      '3 cajones principales con rieles telescópicos de cierre suave',
-      'Banco tapizado en terciopelo o microfibra a elección',
-      'Espejo cristal importado sin distorsión'
-    ]
-  },
-  {
-    id: 'sala-entretenimiento',
-    name: 'Centro de TV & Sofá Modular Melgar',
+    id: 'sala-fiorella',
+    name: 'Sala Fiorella',
     category: 'sala',
     categoryLabel: 'Sala de Estar',
     image: '/assets/products/sala-entretenimiento.jpg',
-    shortDesc: 'Modular de pared para pantalla TV con vitrinas amaderadas, cava de vinos integrada y mesa auxiliar.',
-    fullDesc: 'Una solución integral de entretenimiento que une la calidez del mueble de madera maciza con las necesidades contemporáneas de tecnología en el hogar.',
-    material: 'Madera Maciza + Cristales Templados',
-    dimensions: 'Modular TV: 2.40m x 1.90m x 0.45m',
+    shortDesc: 'Líneas clásicas, materiales cálidos y detalles cuidadosamente trabajados.',
+    fullDesc: 'Una colección que nace del carácter de la madera y de la tradición de crear muebles pensados para acompañar la vida. Crea espacios que invitan a quedarse, compartir y construir recuerdos.',
+    material: 'Madera Sólida',
+    dimensions: 'Configuración Personalizada',
     features: [
-      'Gestión oculta de cableado multimedia',
-      'Vitrinas con iluminación cálida empotrada',
-      'Cava de vinos en madera tratada'
+      'Líneas clásicas y detalles trabajados',
+      'Espacios para compartir y construir recuerdos'
     ]
   },
   {
-    id: 'cama-king-imperial',
-    name: 'Dormitorio Cama King Imperial',
-    category: 'habitaciones',
-    categoryLabel: 'Habitación',
-    image: '/assets/products/cama-king-imperial.jpg',
-    shortDesc: 'Cama matrimonial King Size con espaldar amaderado estructurado y largueros de alta resistencia.',
-    fullDesc: 'La Cama King Imperial de Maderas Melgar está construida con durabilidad intergeneracional. Su espaldar con paneles de madera maciza refleja el lema de nuestra marca: Muebles que traspasan épocas.',
-    material: 'Madera Maciza de Seike de 2 pulgadas',
-    dimensions: 'Para colchón King (2.00m x 2.00m)',
+    id: 'comedor-sorento',
+    name: 'Comedor Sorento',
+    category: 'comedor',
+    categoryLabel: 'Comedor',
+    image: '/assets/products/comedor-elegance.jpg',
+    shortDesc: 'La elegancia de lo que permanece. Inspira tradición y belleza de diseños clásicos.',
+    fullDesc: 'Inspirada en la tradición y en la belleza de los diseños clásicos, Sorento combina la calidez de la madera con detalles trabajados para crear espacios de carácter y distinción. Una colección pensada para quienes encuentran belleza en lo atemporal y valoran piezas que pueden acompañar momentos que pasan de generación en generación.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
     features: [
-      'Parrilla central de soporte con pies de refuerzo',
-      'Ensambles invisibles de altísima precisión',
-      'Disponible en tamaño Queen, King y Super King'
+      'Detalles trabajados de carácter y distinción',
+      'Belleza atemporal'
     ]
   },
   {
-    id: 'cocina-integral',
-    name: 'Mueble de Cocina Integral en Madera',
-    category: 'cocina',
-    categoryLabel: 'Cocina',
-    image: '/assets/products/cocina-integral.jpg',
-    shortDesc: 'Gabinete modular para cocina con acabados amaderados repelentes a la humedad.',
-    fullDesc: 'Transforme su cocina con gabinetes en madera tratada hidrófuga que combinan la textura rústica elegante con la funcionalidad de la arquitectura moderna.',
-    material: 'Madera Tratada Antihumedad + Herrajes Inoxidables',
-    dimensions: 'Diseño modular adaptado a medida del espacio',
+    id: 'silla-sorento',
+    name: 'Silla de comedor Sorento',
+    category: 'comedor',
+    categoryLabel: 'Comedor',
+    image: '/assets/products/comedor-elegance.jpg',
+    shortDesc: 'Silla clásica con calidez de la madera y detalles trabajados.',
+    fullDesc: 'Complemento de la colección Sorento, pensada para quienes encuentran belleza en lo atemporal y valoran piezas que pueden acompañar momentos de generación en generación.',
+    material: 'Madera Sólida + Tapiz',
+    dimensions: 'Estándar',
     features: [
-      'Bisagras bidimensionales reforzadas de acero inoxidable',
-      'Protección contra vapor y aceites de cocina',
-      'Organización de almacenamiento maximizada'
+      'Diseño clásico y elegante',
+      'Asiento ergonómico con tapizado seleccionado'
     ]
   },
   {
-    id: 'escritorio-ejecutivo',
-    name: 'Escritorio Ejecutivo & Biblioteca',
-    category: 'estudio',
-    categoryLabel: 'Estudio & Oficina',
-    image: '/assets/products/escritorio-ejecutivo.jpg',
-    shortDesc: 'Mueble escritorio de trabajo en madera noble con cajonera de seguridad y estantería superior.',
-    fullDesc: 'Ideal para despachos directivos y oficinas de hogar donde la presencia y sofisticación de la madera auténtica marcan la diferencia.',
-    material: 'Madera Maciza de Seike / Roble',
-    dimensions: 'Escritorio: 1.50m x 0.75m x 0.76m',
-    features: [
-      'Superficie pulida suave con barniz de altísima resistencia',
-      'Cajón principal con cerradura de seguridad',
-      'Pasa-cables ocultos integrados en la estructura'
-    ]
-  },
-  {
-    id: 'comedor-artesanal',
-    name: 'Trinchante & Buffet Comedor Artesanal',
+    id: 'bufetero-halem',
+    name: 'Bufetero Halem',
     category: 'comedor',
     categoryLabel: 'Comedor',
     image: '/assets/products/comedor-artesanal.jpg',
-    shortDesc: 'Mueble trinchante buffet para Vajilla con puertas de madera y gavetas superiores.',
-    fullDesc: 'Complemento indiscutible del comedor formal. Ofrece amplio espacio de almacenamiento interior para mantelería y piezas de cristalería.',
-    material: 'Madera Maciza Amaderada',
-    dimensions: 'Ancho: 1.60m | Alto: 0.90m | Profundidad: 0.45m',
+    shortDesc: 'Mueble complementario para el comedor de la Colección Halem.',
+    fullDesc: 'Lleva al interior del hogar la sensación de estar rodeado de naturaleza. Espacio de almacenamiento elegante y atemporal.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
     features: [
-      'Estantes interiores ajustables',
-      'Cajones con separadores acolchados para cubertería',
-      'Tiradores metálicos artesanales'
+      'Almacenamiento funcional',
+      'Diseño atemporal de líneas elegantes'
+    ]
+  },
+  {
+    id: 'comedor-coral',
+    name: 'Comedor Coral',
+    category: 'comedor',
+    categoryLabel: 'Comedor',
+    image: '/assets/products/comedor-elegance.jpg',
+    shortDesc: 'La precisión de la madera. Calidez combinada con superficies ligeras y geométricas.',
+    fullDesc: 'Una colección donde el diseño encuentra su expresión en las líneas, las proporciones y los detalles. La calidez de la madera se combina con superficies ligeras y formas geométricas para crear piezas contemporáneas, elegantes y llenas de carácter.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
+    features: [
+      'Formas geométricas precisas',
+      'Superficies ligeras y elegantes'
+    ]
+  },
+  {
+    id: 'dormitorio-imperial',
+    name: 'Dormitorio Imperial',
+    category: 'habitaciones',
+    categoryLabel: 'Habitación',
+    image: '/assets/products/cama-king-imperial.jpg',
+    shortDesc: 'La grandeza de lo atemporal. Inspirada en la elegancia de los diseños clásicos.',
+    fullDesc: 'Expresa carácter a través de detalles cuidadosamente trabajados y una ebanistería que honra la elegancia. Una colección creada para quienes valoran los espacios con personalidad y piezas que no necesitan seguir tendencias para permanecer de moda.',
+    material: 'Madera Sólida',
+    dimensions: 'Personalizable (Queen, King, Super King)',
+    features: [
+      'Diseño clásico y elegante',
+      'Detalles de ebanistería tradicional'
+    ]
+  },
+  {
+    id: 'coqueta-imperial',
+    name: 'Coqueta Imperial',
+    category: 'habitaciones',
+    categoryLabel: 'Habitación',
+    image: '/assets/products/tocador-luxury.jpg',
+    shortDesc: 'Complemento clásico de la colección Imperial con detalles cuidadosamente trabajados.',
+    fullDesc: 'La coqueta imperial añade elegancia atemporal al dormitorio, expresando carácter a través de la ebanistería de alta calidad. No necesita seguir tendencias para permanecer de moda.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
+    features: [
+      'Espacio funcional de organización personal',
+      'Diseño clásico atemporal'
+    ]
+  },
+  {
+    id: 'comoda-specia',
+    name: 'Semanero y Cómoda Specia',
+    category: 'habitaciones',
+    categoryLabel: 'Habitación',
+    image: '/assets/products/tocador-luxury.jpg', 
+    shortDesc: 'Inspirada en la calidez de los refugios entre madera y montaña.',
+    fullDesc: 'Una colección inspirada en la calidez de los refugios donde la madera, las texturas y los tonos naturales crean una sensación de abrigo y tranquilidad.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
+    features: [
+      'Tonos naturales',
+      'Sensación de abrigo y tranquilidad'
+    ]
+  },
+  {
+    id: 'dormitorio-roma',
+    name: 'Dormitorio Roma',
+    category: 'habitaciones',
+    categoryLabel: 'Habitación',
+    image: '/assets/products/cama-king-imperial.jpg',
+    shortDesc: 'La grandeza de la arquitectura clásica convertida en mobiliario.',
+    fullDesc: 'Inspirada en las formas y detalles de la arquitectura romana, esta colección combina la fuerza de la madera con curvas, relieves y proporciones que evocan elegancia. El carácter de Roma, transformado en madera.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
+    features: [
+      'Curvas y relieves arquitectónicos',
+      'Proporciones elegantes clásicas'
+    ]
+  },
+  {
+    id: 'entretenimiento-roma',
+    name: 'Centro de Entretenimiento Roma',
+    category: 'complementos',
+    categoryLabel: 'Complementos',
+    image: '/assets/products/sala-entretenimiento.jpg',
+    shortDesc: 'Fuerza de la madera con detalles inspirados en la arquitectura clásica.',
+    fullDesc: 'Complemento ideal de la Colección Roma, combina formas arquitectónicas y proporciones elegantes para entregar un centro de entretenimiento con carácter único.',
+    material: 'Madera Sólida',
+    dimensions: 'A medida',
+    features: [
+      'Gestión de espacio superior',
+      'Proporciones y relieves únicos inspirados en Roma'
     ]
   }
 ];

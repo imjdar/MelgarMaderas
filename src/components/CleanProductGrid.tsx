@@ -15,10 +15,10 @@ export function CleanProductGrid({ onAddToCart, cartProductIds }: CleanProductGr
   const [filter, setFilter] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const categories = ['All', 'Habitaciones', 'Sala', 'Comedor', 'Cocina', 'Estudio'];
+  const categories = ['All', 'Habitaciones', 'Sala', 'Comedor', 'Cocina', 'Estudio', 'Complementos'];
   const filteredProducts = filter === 'All' 
     ? PRODUCTS 
-    : PRODUCTS.filter(p => p.category === filter.toLowerCase() || (filter === 'Habitaciones' && p.category === 'habitaciones') || (filter === 'Sala' && p.category === 'sala') || (filter === 'Comedor' && p.category === 'comedor') || (filter === 'Cocina' && p.category === 'cocina') || (filter === 'Estudio' && p.category === 'estudio'));
+    : PRODUCTS.filter(p => p.category === filter.toLowerCase() || (filter === 'Habitaciones' && p.category === 'habitaciones') || (filter === 'Sala' && p.category === 'sala') || (filter === 'Comedor' && p.category === 'comedor') || (filter === 'Cocina' && p.category === 'cocina') || (filter === 'Estudio' && p.category === 'estudio') || (filter === 'Complementos' && p.category === 'complementos'));
 
   return (
     <section id="catalogo" className="py-24 bg-white text-[#3A1A0E]">
@@ -63,8 +63,8 @@ export function CleanProductGrid({ onAddToCart, cartProductIds }: CleanProductGr
                   <WatermarkImage
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full"
-                    imageClassName="object-contain object-center transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full"
+                    imageClassName="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* Hover Overlay */}
