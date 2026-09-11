@@ -93,7 +93,61 @@ export const WatermarkImage: React.FC<WatermarkImageProps> = ({
         />
       )}
 
+      {/* Capa de Marca de Agua Indeleble Anti-Copia */}
+      <div
+        onClick={onShieldClick}
+        style={{
+          position: 'absolute',
+          bottom: '0.75rem',
+          right: '0.75rem',
+          backgroundColor: 'rgba(15, 12, 10, 0.75)',
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
+          color: '#FAF8F5',
+          border: '1px solid rgba(197, 155, 39, 0.3)',
+          padding: '0.35rem 0.75rem',
+          borderRadius: '4px',
+          fontSize: '0.7rem',
+          fontWeight: 700,
+          letterSpacing: '0.08em',
+          pointerEvents: onShieldClick ? 'auto' : 'none',
+          cursor: onShieldClick ? 'pointer' : 'default',
+          zIndex: 10,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.35rem',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+        }}
+      >
+        <ShieldCheck size={12} color="#C59B27" />
+        <span>{watermarkLabel}</span>
+      </div>
 
+      {/* Marca de Agua Diagonal Sutil Central */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none',
+          zIndex: 9,
+          opacity: 0.08,
+          transform: 'rotate(-25deg)'
+        }}
+      >
+        <span style={{
+          fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+          fontWeight: 900,
+          color: '#ffffff',
+          textTransform: 'uppercase',
+          letterSpacing: '0.2em',
+          whiteSpace: 'nowrap'
+        }}>
+          {watermarkLabel}
+        </span>
+      </div>
     </div>
   );
 };

@@ -50,6 +50,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
+          <div>
             <h4 style={{ fontSize: '1.05rem', color: '#FFFFFF', marginBottom: '1.25rem', fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}>
               Navegación
             </h4>
