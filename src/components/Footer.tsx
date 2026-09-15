@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ShieldCheck, ArrowUp, Phone } from 'lucide-react';
+import { ShieldCheck, ArrowUp, Phone, MapPin, Mail, Instagram, Facebook, Video } from 'lucide-react';
 import { APP_CONFIG } from '@/services/configService';
 
 export const Footer: React.FC = () => {
@@ -63,8 +63,72 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
+          <div>
+            <h4 style={{ fontSize: '1.05rem', color: '#FFFFFF', marginBottom: '1.25rem', fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}>
+              Contacto
+            </h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
+              <li>
+                <a href="https://maps.google.com/?q=Maderas+Melgar+Quito" target="_blank" rel="noopener noreferrer" style={{ color: '#D1D5DB', transition: 'color 0.2s', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <MapPin size={16} className="mt-1 flex-shrink-0 text-[#F59E0B]" />
+                  <span>Sede Quito<br/><span className="text-xs text-gray-500">Fábrica principal y showroom</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://maps.google.com/?q=Mall+del+Norte+Guayaquil" target="_blank" rel="noopener noreferrer" style={{ color: '#D1D5DB', transition: 'color 0.2s', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <MapPin size={16} className="mt-1 flex-shrink-0 text-[#F59E0B]" />
+                  <span>Sede Guayaquil<br/><span className="text-xs text-gray-500">Mall del Norte</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/593995601096" target="_blank" rel="noopener noreferrer" style={{ color: '#D1D5DB', transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Phone size={16} className="text-[#F59E0B]" />
+                  <span>+593 99 560 1096</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:ventas@melgarmaderas.com.ec" style={{ color: '#D1D5DB', transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Mail size={16} className="text-[#F59E0B]" />
+                  <span>ventas@melgarmaderas.com.ec</span>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-
+          <div>
+            <h4 style={{ fontSize: '1.05rem', color: '#FFFFFF', marginBottom: '1.25rem', fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}>
+              Encuéntranos (Quito)
+            </h4>
+            <div className="w-full aspect-video bg-[#22170F] relative overflow-hidden border border-[#3A2A1A]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7997387258384!2d-78.5005331!3d-0.1336545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59b221063e75f%3A0x9ec77b3b4c82a1b1!2sMaderas%20Melgar!5e0!3m2!1ses-ES!2sec!4v1700000000000!5m2!1ses-ES!2sec" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+              ></iframe>
+            </div>
+            
+            <div className="mt-8">
+              <h4 style={{ fontSize: '1.05rem', color: '#FFFFFF', marginBottom: '1rem', fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}>
+                Redes Sociales
+              </h4>
+              <div className="flex gap-4">
+                <a href={APP_CONFIG.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1A110B] border border-[#3A2A1A] flex items-center justify-center text-[#D1D5DB] hover:text-[#C59B27] hover:border-[#C59B27] transition-colors">
+                  <Instagram size={18} />
+                </a>
+                <a href={APP_CONFIG.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1A110B] border border-[#3A2A1A] flex items-center justify-center text-[#D1D5DB] hover:text-[#C59B27] hover:border-[#C59B27] transition-colors">
+                  <Facebook size={18} />
+                </a>
+                <a href={APP_CONFIG.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1A110B] border border-[#3A2A1A] flex items-center justify-center text-[#D1D5DB] hover:text-[#C59B27] hover:border-[#C59B27] transition-colors">
+                  <Video size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div 
@@ -85,10 +149,10 @@ export const Footer: React.FC = () => {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-            <span style={{ color: '#F59E0B', fontWeight: 600 }}>Estudio Arquitectónico • Quito, Ecuador</span>
+            <span style={{ color: '#F59E0B', fontWeight: 600 }}>Quito, Guayaquil — Ecuador</span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#D1D5DB' }}>
               <Phone size={16} />
-              <span style={{ fontFamily: 'Inter, sans-serif' }}>{APP_CONFIG.whatsappNumber}</span>
+              <span style={{ fontFamily: 'Inter, sans-serif' }}>+593 99 560 1096</span>
             </div>
             
             <button

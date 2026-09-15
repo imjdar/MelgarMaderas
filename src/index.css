@@ -9,25 +9,25 @@
 
 :root {
   /* Corporate Palette */
-  --color-wood-dark: #3A1A0E;
-  --color-wood-deep: #251108;
+  --color-wood-dark: #C5A059; /* Gold */
+  --color-wood-deep: #AA8540;
   --color-wood-medium: #6E3B20;
-  --color-green-primary: #0D6838;
-  --color-green-hover: #09522B;
-  --color-green-light: #EBF7F0;
+  --color-green-primary: #C5A059; /* Changed to Gold */
+  --color-green-hover: #AA8540;
+  --color-green-light: rgba(197, 160, 89, 0.1);
   --color-gold-accent: #C5A059;
   --color-gold-hover: #AA8540;
   
   /* Backgrounds & Surfaces */
-  --color-cream-bg: #FDFBF7;
-  --color-cream-surface: #F5F1E8;
-  --color-surface-white: #FFFFFF;
+  --color-cream-bg: #120C08; /* Dark Base */
+  --color-cream-surface: #1A110B; /* Dark Surface */
+  --color-surface-white: #22170F; /* Card Surface */
   --color-dark-bg: #161312;
   --color-dark-surface: #221D1B;
 
   /* Typography Colors */
-  --color-text-dark: #1A1715;
-  --color-text-muted: #5C544C;
+  --color-text-dark: #FDFBF7; /* White text for dark mode */
+  --color-text-muted: #DCD2C6;
   --color-text-light: #8E847A;
   --color-text-white: #FFFFFF;
 
@@ -37,12 +37,12 @@
   --font-script: 'Cormorant Garamond', Georgia, serif;
 
   /* Shadows & Glassmorphism */
-  --shadow-sm: 0 2px 8px rgba(26, 23, 21, 0.04);
-  --shadow-md: 0 8px 24px rgba(26, 23, 21, 0.08);
-  --shadow-lg: 0 16px 40px rgba(26, 23, 21, 0.12);
-  --shadow-xl: 0 24px 60px rgba(13, 104, 56, 0.18);
-  --glass-bg: rgba(253, 251, 247, 0.88);
-  --glass-border: rgba(220, 210, 195, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 24px 60px rgba(197, 160, 89, 0.15);
+  --glass-bg: rgba(18, 12, 8, 0.88);
+  --glass-border: rgba(197, 160, 89, 0.3);
 
   /* Radius & Transitions */
   --radius-sm: 6px;

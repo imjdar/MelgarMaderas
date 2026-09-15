@@ -8,6 +8,7 @@ import { LuxuryNavbar } from '@/components/LuxuryNavbar';
 import { MinimalFooter } from '@/components/MinimalFooter';
 import { MultiQuoteCart } from '@/components/MultiQuoteCart';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
+import { SocialContactSection } from '@/components/SocialContactSection';
 
 interface CartContextType {
   cart: Product[];
@@ -50,13 +51,13 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <CartContext.Provider value={{ cart: multiCart, addToCart: handleAddToCart, removeFromCart: handleRemoveFromCart, clearCart: handleClearCart }}>
       <div
-        className="app-main-wrapper"
+        className="app-main-wrapper w-full min-w-full"
         style={{
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#FDFBF7',
-          color: '#3A1A0E',
+          backgroundColor: '#120C08',
+          color: '#FFFFFF',
         }}
       >
         <LuxuryNavbar 
@@ -69,6 +70,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
           {children}
         </main>
 
+        <SocialContactSection />
         <MinimalFooter />
 
         <MultiQuoteCart

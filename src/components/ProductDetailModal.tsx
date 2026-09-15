@@ -37,29 +37,29 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
       />
 
       {/* Modal Content */}
-      <div className="relative bg-[#FDFBF7] w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl rounded-sm">
+      <div className="relative bg-[#1A110B] w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl rounded-sm">
         
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-white text-[#3A1A0E] rounded-full transition-colors shadow-sm"
+          className="absolute top-4 right-4 z-10 p-2 bg-[#120C08]/80 hover:bg-[#120C08] text-white rounded-full transition-colors shadow-sm"
           aria-label="Cerrar modal"
         >
           <X size={24} />
         </button>
 
         {/* Image Section (Left on Desktop, Top on Mobile) */}
-        <div className="w-full md:w-1/2 relative bg-gray-100 aspect-square md:aspect-auto md:min-h-[600px]">
+        <div className="w-full md:w-1/2 relative bg-[#120C08] aspect-square md:aspect-auto md:min-h-[600px]">
           <WatermarkImage
             src={product.image}
             alt={product.name}
             className="w-full h-full"
-            imageClassName="object-cover grayscale contrast-125 bg-gray-100"
+            imageClassName="object-cover grayscale contrast-125 bg-[#120C08]"
           />
         </div>
 
         {/* Details Section */}
-        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-[#FDFBF7] text-[#3A1A0E]">
+        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-[#1A110B] text-white">
           <div className="mb-2 text-xs font-bold tracking-[0.2em] uppercase text-[#C59B27]">
             {product.categoryLabel}
           </div>
@@ -68,20 +68,20 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
             {product.name}
           </h2>
           
-          <div className="w-12 h-px bg-[#0D6838] mb-8"></div>
+          <div className="w-12 h-px bg-[#C59B27] mb-8"></div>
           
-          <p className="text-gray-600 font-light leading-relaxed mb-10">
+          <p className="text-gray-300 font-light leading-relaxed mb-10">
             {product.fullDesc}
           </p>
           
           <div className="space-y-4 mb-10">
-            <div className="flex justify-between border-b border-gray-200 pb-2">
-              <span className="text-gray-500 uppercase tracking-wider text-xs">Material Recomendado</span>
+            <div className="flex justify-between border-b border-[#3A2A1A] pb-2">
+              <span className="text-gray-400 uppercase tracking-wider text-xs">Material Recomendado</span>
               <span className="font-medium">{product.material}</span>
             </div>
             {/* Si existieran dimensiones, se podrían agregar aquí */}
-            <div className="flex justify-between border-b border-gray-200 pb-2">
-              <span className="text-gray-500 uppercase tracking-wider text-xs">Colección</span>
+            <div className="flex justify-between border-b border-[#3A2A1A] pb-2">
+              <span className="text-gray-400 uppercase tracking-wider text-xs">Colección</span>
               <span className="font-medium">Editorial {new Date().getFullYear()}</span>
             </div>
           </div>
@@ -95,8 +95,8 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
               }}
               className={`w-full py-4 px-6 border text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
                 inCart 
-                  ? 'bg-gray-200 border-gray-200 text-gray-800' 
-                  : 'border-[#0D6838] bg-[#0D6838] text-white hover:bg-white hover:text-[#0D6838]'
+                  ? 'bg-[#22170F] border-[#22170F] text-gray-300' 
+                  : 'border-[#C59B27] bg-[#C59B27] text-[#1A110B] hover:bg-transparent hover:text-[#C59B27]'
               }`}
             >
               {inCart ? (

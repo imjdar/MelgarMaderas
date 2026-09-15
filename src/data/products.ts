@@ -3,7 +3,46 @@
  * Información extraída del catálogo oficial proporcionado.
  */
 
-import { Product, Category } from '../types';
+import { Product, Category, ProductCollection } from '../types';
+
+export const PRODUCT_COLLECTIONS: ProductCollection[] = [
+  {
+    id: 'halem',
+    title: 'Colección Halem',
+    subtitle: 'Maderas cálidas, textiles suaves y tonos que evocan tierra, agua y tranquilidad.',
+    description: 'Una colección que lleva al interior del hogar la sensación de estar rodeado de naturaleza, combinando el carácter de la madera con líneas elegantes y atemporales. Diseñada para quedarse.'
+  },
+  {
+    id: 'fiorella',
+    title: 'COLECCIÓN FIORELLA: Donde el hogar comienza.',
+    description: 'Una colección que nace del carácter de la madera y de la tradición de crear muebles pensados para acompañar la vida. Sus líneas clásicas, materiales cálidos y detalles cuidadosamente trabajados crean espacios que invitan a quedarse, compartir y construir recuerdos. Porque algunos muebles no solo decoran una casa, Se convierten en parte de su historia.'
+  },
+  {
+    id: 'sorento',
+    title: 'COLECCIÓN SORENTO: La elegancia de lo que permanece.',
+    description: 'Inspirada en la tradición y en la belleza de los diseños clásicos, Sorento combina la calidez de la madera con detalles trabajados para crear espacios de carácter y distinción. Una colección pensada para quienes encuentran belleza en lo atemporal y valoran piezas que pueden acompañar momentos que pasan de generación en generación. Muebles para compartir.'
+  },
+  {
+    id: 'coral',
+    title: 'COLECCIÓN CORAL: La precisión de la madera.',
+    description: 'Una colección donde el diseño encuentra su expresión en las líneas, las proporciones y los detalles. La calidez de la madera se combina con superficies ligeras y formas geométricas para crear piezas contemporáneas, elegantes y llenas de carácter. Diseño que encuentra belleza en cada línea.'
+  },
+  {
+    id: 'imperial',
+    title: 'COLECCIÓN IMPERIAL: La grandeza de lo atemporal.',
+    description: 'Inspirada en la elegancia de los diseños clásicos, expresa carácter a través de detalles cuidadosamente trabajados y una ebanistería que honra la elegancia. Una colección creada para quienes valoran los espacios con personalidad y piezas que no necesitan seguir tendencias para permanecer de moda.'
+  },
+  {
+    id: 'specia',
+    title: 'COLECCIÓN SPECIA: Entre madera y montaña.',
+    description: 'Una colección inspirada en la calidez de los refugios donde la madera, las texturas y los tonos naturales crean una sensación de abrigo y tranquilidad.'
+  },
+  {
+    id: 'roma',
+    title: 'Colección Roma: La grandeza de la arquitectura clásica.',
+    description: 'Inspirada en las formas y detalles de la arquitectura romana, esta colección combina la fuerza de la madera con curvas, relieves y proporciones que evocan elegancia. El carácter de Roma, transformado en madera.'
+  }
+];
 
 export const CATEGORIES: Category[] = [
   { id: 'todos', label: 'Todos los Ambientes' },
@@ -21,7 +60,8 @@ export const PRODUCTS: Product[] = [
     name: 'Sala Halem',
     category: 'sala',
     categoryLabel: 'Sala de Estar',
-    image: '/assets/products/sala-armonia.jpg', 
+    collectionId: 'halem',
+    image: '/assets/products/sala-halem.jpeg', 
     shortDesc: 'Maderas cálidas, textiles suaves y tonos que evocan tierra, agua y tranquilidad.',
     fullDesc: 'Una colección que lleva al interior del hogar la sensación de estar rodeado de naturaleza, combinando el carácter de la madera con líneas elegantes y atemporales. Diseñada para quedarse.',
     material: 'Madera Sólida + Textiles Seleccionados',
@@ -37,7 +77,8 @@ export const PRODUCTS: Product[] = [
     name: 'Mesa de centro redonda Halem',
     category: 'sala',
     categoryLabel: 'Sala de Estar',
-    image: '/assets/products/sala-linea-premium.jpg',
+    collectionId: 'halem',
+    image: '/assets/products/mesa-centro-halem.jpeg',
     shortDesc: 'Mesa de centro circular con carácter amaderado y líneas atemporales.',
     fullDesc: 'Complemento perfecto de la Colección Halem, que lleva al interior del hogar la sensación de estar rodeado de naturaleza.',
     material: 'Madera Sólida',
@@ -52,7 +93,8 @@ export const PRODUCTS: Product[] = [
     name: 'Sala Fiorella',
     category: 'sala',
     categoryLabel: 'Sala de Estar',
-    image: '/assets/products/sala-entretenimiento.jpg',
+    collectionId: 'fiorella',
+    image: '/assets/products/sala-fiorella.jpeg',
     shortDesc: 'Líneas clásicas, materiales cálidos y detalles cuidadosamente trabajados.',
     fullDesc: 'Una colección que nace del carácter de la madera y de la tradición de crear muebles pensados para acompañar la vida. Crea espacios que invitan a quedarse, compartir y construir recuerdos.',
     material: 'Madera Sólida',
@@ -67,7 +109,8 @@ export const PRODUCTS: Product[] = [
     name: 'Comedor Sorento',
     category: 'comedor',
     categoryLabel: 'Comedor',
-    image: '/assets/products/comedor-elegance.jpg',
+    collectionId: 'sorento',
+    image: '/assets/products/comedor-sorento.jpeg',
     shortDesc: 'La elegancia de lo que permanece. Inspira tradición y belleza de diseños clásicos.',
     fullDesc: 'Inspirada en la tradición y en la belleza de los diseños clásicos, Sorento combina la calidez de la madera con detalles trabajados para crear espacios de carácter y distinción. Una colección pensada para quienes encuentran belleza en lo atemporal y valoran piezas que pueden acompañar momentos que pasan de generación en generación.',
     material: 'Madera Sólida',
@@ -82,7 +125,8 @@ export const PRODUCTS: Product[] = [
     name: 'Silla de comedor Sorento',
     category: 'comedor',
     categoryLabel: 'Comedor',
-    image: '/assets/products/comedor-elegance.jpg',
+    collectionId: 'sorento',
+    image: '/assets/products/silla-sorento.jpeg',
     shortDesc: 'Silla clásica con calidez de la madera y detalles trabajados.',
     fullDesc: 'Complemento de la colección Sorento, pensada para quienes encuentran belleza en lo atemporal y valoran piezas que pueden acompañar momentos de generación en generación.',
     material: 'Madera Sólida + Tapiz',
@@ -97,7 +141,8 @@ export const PRODUCTS: Product[] = [
     name: 'Bufetero Halem',
     category: 'comedor',
     categoryLabel: 'Comedor',
-    image: '/assets/products/comedor-artesanal.jpg',
+    collectionId: 'sorento',
+    image: '/assets/products/bufetero-halem.jpeg',
     shortDesc: 'Mueble complementario para el comedor de la Colección Halem.',
     fullDesc: 'Lleva al interior del hogar la sensación de estar rodeado de naturaleza. Espacio de almacenamiento elegante y atemporal.',
     material: 'Madera Sólida',
@@ -112,7 +157,8 @@ export const PRODUCTS: Product[] = [
     name: 'Comedor Coral',
     category: 'comedor',
     categoryLabel: 'Comedor',
-    image: '/assets/products/comedor-elegance.jpg',
+    collectionId: 'coral',
+    image: '/assets/products/comedor-coral.jpeg',
     shortDesc: 'La precisión de la madera. Calidez combinada con superficies ligeras y geométricas.',
     fullDesc: 'Una colección donde el diseño encuentra su expresión en las líneas, las proporciones y los detalles. La calidez de la madera se combina con superficies ligeras y formas geométricas para crear piezas contemporáneas, elegantes y llenas de carácter.',
     material: 'Madera Sólida',
@@ -127,7 +173,8 @@ export const PRODUCTS: Product[] = [
     name: 'Dormitorio Imperial',
     category: 'habitaciones',
     categoryLabel: 'Habitación',
-    image: '/assets/products/cama-king-imperial.jpg',
+    collectionId: 'imperial',
+    image: '/assets/products/dormitorio-imperial.jpeg',
     shortDesc: 'La grandeza de lo atemporal. Inspirada en la elegancia de los diseños clásicos.',
     fullDesc: 'Expresa carácter a través de detalles cuidadosamente trabajados y una ebanistería que honra la elegancia. Una colección creada para quienes valoran los espacios con personalidad y piezas que no necesitan seguir tendencias para permanecer de moda.',
     material: 'Madera Sólida',
@@ -142,7 +189,8 @@ export const PRODUCTS: Product[] = [
     name: 'Coqueta Imperial',
     category: 'habitaciones',
     categoryLabel: 'Habitación',
-    image: '/assets/products/tocador-luxury.jpg',
+    collectionId: 'imperial',
+    image: '/assets/products/coqueta-imperial.jpeg',
     shortDesc: 'Complemento clásico de la colección Imperial con detalles cuidadosamente trabajados.',
     fullDesc: 'La coqueta imperial añade elegancia atemporal al dormitorio, expresando carácter a través de la ebanistería de alta calidad. No necesita seguir tendencias para permanecer de moda.',
     material: 'Madera Sólida',
@@ -157,7 +205,8 @@ export const PRODUCTS: Product[] = [
     name: 'Semanero y Cómoda Specia',
     category: 'habitaciones',
     categoryLabel: 'Habitación',
-    image: '/assets/products/tocador-luxury.jpg', 
+    collectionId: 'specia',
+    image: '/assets/products/comoda-specia.jpeg', 
     shortDesc: 'Inspirada en la calidez de los refugios entre madera y montaña.',
     fullDesc: 'Una colección inspirada en la calidez de los refugios donde la madera, las texturas y los tonos naturales crean una sensación de abrigo y tranquilidad.',
     material: 'Madera Sólida',
@@ -172,7 +221,8 @@ export const PRODUCTS: Product[] = [
     name: 'Dormitorio Roma',
     category: 'habitaciones',
     categoryLabel: 'Habitación',
-    image: '/assets/products/cama-king-imperial.jpg',
+    collectionId: 'roma',
+    image: '/assets/products/dormitorio-roma.jpeg',
     shortDesc: 'La grandeza de la arquitectura clásica convertida en mobiliario.',
     fullDesc: 'Inspirada en las formas y detalles de la arquitectura romana, esta colección combina la fuerza de la madera con curvas, relieves y proporciones que evocan elegancia. El carácter de Roma, transformado en madera.',
     material: 'Madera Sólida',
@@ -187,7 +237,8 @@ export const PRODUCTS: Product[] = [
     name: 'Centro de Entretenimiento Roma',
     category: 'complementos',
     categoryLabel: 'Complementos',
-    image: '/assets/products/sala-entretenimiento.jpg',
+    collectionId: 'roma',
+    image: '/assets/products/centro-entretenimiento-roma.jpeg',
     shortDesc: 'Fuerza de la madera con detalles inspirados en la arquitectura clásica.',
     fullDesc: 'Complemento ideal de la Colección Roma, combina formas arquitectónicas y proporciones elegantes para entregar un centro de entretenimiento con carácter único.',
     material: 'Madera Sólida',

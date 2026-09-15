@@ -12,47 +12,55 @@ export function MinimalFooter() {
           {/* Brand Info */}
           <div>
             <h3 className="text-2xl mb-6 tracking-widest text-[#C59B27]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-              MELGAR MADERAS
+              MADERAS MELGAR
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Diseño y fabricación de muebles macizos en Quito, Ecuador. Combinando técnicas tradicionales de ebanistería con diseño contemporáneo.
+              Desde 1996 transformamos maderas seleccionadas en piezas pensadas para acompañar la vida de quienes las habitan.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={20} />
-              </a>
-            </div>
+
           </div>
 
-          {/* Quick Links */}
+          {/* Navegación */}
           <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] mb-6 text-gray-200">Colecciones</h4>
+            <h4 className="text-sm uppercase tracking-[0.2em] mb-6 text-gray-200">Navegación</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><a href="#salas" className="hover:text-white transition-colors">Salas y Estares</a></li>
-              <li><a href="#comedores" className="hover:text-white transition-colors">Comedores</a></li>
-              <li><a href="#dormitorios" className="hover:text-white transition-colors">Dormitorios</a></li>
-              <li><a href="#ebanisteria" className="hover:text-white transition-colors">Nuestro Proceso</a></li>
+              <li><a href="/quienes-somos" className="hover:text-white transition-colors">Nosotros</a></li>
+              <li><a href="/productos" className="hover:text-white transition-colors">Productos</a></li>
+              <li><a href="/showroom" className="hover:text-white transition-colors">Showroom</a></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] mb-6 text-gray-200">Showroom Quito</h4>
+            <h4 className="text-sm uppercase tracking-[0.2em] mb-6 text-gray-200">Contacto</h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-0.5 shrink-0" />
-                <span>{APP_CONFIG.location.addressLine}<br />Quito, Ecuador</span>
+                <a href="https://www.google.com/maps/place/Maderas+Melgar/@-0.1336545,-78.5005331,17z" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <span className="font-medium text-white">Sede Quito:</span><br />
+                  Dr. José Fernández Salvador y n56c<br />
+                  170135 Quito
+                </a>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="mt-0.5 shrink-0" />
+                <a href="https://www.google.com/maps/place/Mall+del+Norte/@-2.0950004,-79.9126513,17z" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <span className="font-medium text-white">Sede Guayaquil:</span><br />
+                  Av. Francisco de Orellana Mz. 2576<br />
+                  Mall del Norte
+                </a>
+              </li>
+              <li className="flex items-center gap-3 mt-2">
                 <Phone size={18} className="shrink-0" />
-                <span>{APP_CONFIG.whatsappNumber}</span>
+                <a href={`https://wa.me/${APP_CONFIG.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  +593 995601096
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="shrink-0" />
-                <span>ventas@melgarmaderas.com.ec</span>
+                <a href="mailto:ventas@melgarmaderas.com.ec" className="hover:text-white transition-colors">
+                  ventas@melgarmaderas.com.ec
+                </a>
               </li>
             </ul>
           </div>
@@ -74,7 +82,7 @@ export function MinimalFooter() {
 
         {/* Copyright & SEO */}
         <div className="border-t border-gray-800 pt-8 mt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Melgar Maderas. Todos los derechos reservados. melgarmaderas.com.ec</p>
+          <p>© {new Date().getFullYear()} Maderas Melgar. Todos los derechos reservados.</p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white">Políticas de Privacidad</a>
             <a href="#" className="hover:text-white">Términos de Servicio</a>

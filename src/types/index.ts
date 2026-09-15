@@ -14,6 +14,14 @@ export interface Product {
   material: string;
   dimensions: string;
   features: string[];
+  collectionId?: string;
+}
+
+export interface ProductCollection {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
 }
 
 export interface Category {

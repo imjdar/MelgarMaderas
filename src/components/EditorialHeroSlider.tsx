@@ -6,19 +6,22 @@ import { WatermarkImage } from './WatermarkImage';
 
 const slides = [
   {
-    image: '/assets/products/sala-entretenimiento.jpg',
-    title: 'Nueva Colección Seike',
-    subtitle: 'Muebles que traspasan épocas'
+    image: '/assets/products/sala-halem.jpeg',
+    subtitle: 'Maderas Melgar - Lo que nos mueve',
+    title: 'Crear para permanecer',
+    description: 'Diseñamos y fabricamos muebles que combinan materiales nobles, oficio y diseño para crear espacios cálidos, funcionales y atemporales.'
   },
   {
-    image: '/assets/products/cama-king-imperial.jpg',
+    image: '/assets/products/dormitorio-imperial.jpeg',
+    subtitle: 'Roble macizo secado al horno',
     title: 'Calidez y Textura',
-    subtitle: 'Roble macizo secado al horno'
+    description: 'Maderas seleccionadas para acompañar la vida de quienes las habitan.'
   },
   {
-    image: '/assets/products/comedor-elegance.jpg',
-    title: 'Ebanistería Fina',
-    subtitle: 'Acabados en poliuretano de alta resistencia'
+    image: '/assets/products/comedor-sorento.jpeg',
+    subtitle: 'Ebanistería Fina',
+    title: 'Diseños Atemporales',
+    description: 'Piezas pensadas para ser parte de la historia de su hogar.'
   }
 ];
 
@@ -33,7 +36,7 @@ export function EditorialHeroSlider() {
   }, []);
 
   return (
-    <section className="relative w-full h-[90vh] bg-[#FDFBF7] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full h-[90vh] bg-[#120C08] overflow-hidden flex items-center justify-center">
       {/* Protected Image Slider */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -48,7 +51,7 @@ export function EditorialHeroSlider() {
               src={slide.image}
               alt={slide.title}
               className="w-full h-full"
-              imageClassName="object-center"
+              imageClassName="object-contain object-center"
             />
           </div>
         ))}
@@ -63,11 +66,16 @@ export function EditorialHeroSlider() {
           {slides[current].subtitle}
         </span>
         <h2 
-          className="text-5xl md:text-7xl lg:text-8xl font-light mb-8 drop-shadow-lg"
+          className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 drop-shadow-lg"
           style={{ fontFamily: '"Cormorant Garamond", serif' }}
         >
           {slides[current].title}
         </h2>
+        {slides[current].description && (
+          <p className="text-lg md:text-xl font-light mb-8 max-w-2xl text-white/90 drop-shadow-md">
+            {slides[current].description}
+          </p>
+        )}
         <button 
           className="group flex items-center gap-3 text-sm uppercase tracking-widest border-b border-white pb-2 hover:text-[#C59B27] hover:border-[#C59B27] transition-all duration-300"
           onClick={() => {

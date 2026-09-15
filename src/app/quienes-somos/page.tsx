@@ -3,7 +3,7 @@ import { NosotrosSection } from '@/components/NosotrosSection';
 
 export default function QuienesSomosPage() {
   return (
-    <div className="pt-24">
+    <div>
       <NosotrosSection />
     </div>
   );
