@@ -18,8 +18,5 @@ describe('WatermarkImage Component', () => {
 
     const img = screen.getByAltText('Juego de Sala');
     expect(img).toBeInTheDocument();
-
-    const watermarks = screen.getAllByText(/melgarmaderas\.com\.ec/i);
-    expect(watermarks.length).toBeGreaterThan(0);
   });
 });

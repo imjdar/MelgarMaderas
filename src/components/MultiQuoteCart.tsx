@@ -10,19 +10,20 @@ interface MultiQuoteCartProps {
   onRemoveFromCart: (productId: string) => void;
   onClearCart: () => void;
   whatsappNumber: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
   cart,
   onRemoveFromCart,
   onClearCart,
-  whatsappNumber
+  whatsappNumber,
+  isOpen,
+  onClose
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [selectedWood, setSelectedWood] = useState('Madera Maciza de Seike');
   const [customNote, setCustomNote] = useState('');
-
-  if (cart.length === 0) return null;
 
   const handleSendMultiQuote = () => {
     const productListText = cart.map((p, i) => `${i + 1}. *${p.name}* (${p.categoryLabel})`).join('\n');
@@ -33,48 +34,6 @@ export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
 
   return (
     <>
-      {/* Botón Flotante Contador de Cotización Multiproducto */}
-      <div 
-        onClick={() => setIsOpen(true)}
-        className="multi-quote-floating-btn"
-        role="button"
-        tabIndex={0}
-        aria-label={`Abrir lista de cotización con ${cart.length} productos`}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIsOpen(true); }}
-        style={{
-          position: 'fixed',
-          bottom: '6rem',
-          right: '2rem',
-          zIndex: 990,
-          backgroundColor: '#10B981',
-          color: '#ffffff',
-          padding: '0.85rem 1.35rem',
-          borderRadius: '9999px',
-          boxShadow: '0 12px 30px rgba(16, 185, 129, 0.4)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          cursor: 'pointer',
-          border: '2px solid rgba(255, 255, 255, 0.3)',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-        }}
-      >
-        <ShoppingBag size={20} />
-        <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>
-          Lista de Cotización ({cart.length})
-        </span>
-      </div>
-
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .multi-quote-floating-btn {
-            bottom: 5rem !important;
-            right: 1rem !important;
-            padding: 0.7rem 1.1rem !important;
-          }
-        }
-      `}</style>
-
       {/* Drawer / Modal Desplegable del Cotizador */}
       {isOpen && (
         <div 
@@ -119,7 +78,7 @@ export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
                 </h3>
               </div>
               <button 
-                onClick={() => setIsOpen(false)}
+                onClick={onClose}
                 style={{ color: '#9CA3AF', cursor: 'pointer', padding: '0.25rem' }}
               >
                 <X size={24} />
@@ -220,6 +179,27 @@ export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
               gap: '0.75rem'
             }}>
               <button
+                onClick={onClose}
+                style={{
+                  width: '100%',
+                  padding: '0.9rem 1.5rem',
+                  borderRadius: '9999px',
+                  backgroundColor: 'transparent',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  textAlign: 'center'
+                }}
+                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+              >
+                Seguir Comprando
+              </button>
+
+              <button
                 onClick={handleSendMultiQuote}
                 style={{
                   width: '100%',
@@ -250,7 +230,8 @@ export const MultiQuoteCart: React.FC<MultiQuoteCartProps> = ({
                   border: 'none',
                   fontSize: '0.8rem',
                   cursor: 'pointer',
-                  padding: '0.4rem'
+                  padding: '0.4rem',
+                  marginTop: '0.25rem'
                 }}
               >
                 Vaciar lista de cotización

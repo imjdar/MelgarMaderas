@@ -32,17 +32,17 @@ export const CraftsmanshipSection: React.FC = () => {
   ];
 
   return (
-    <section style={{ backgroundColor: '#FDFBF7', padding: '5rem 0', borderBottom: '1px solid #E5DCCB' }}>
+    <section style={{ backgroundColor: '#120C08', padding: '5rem 0', borderBottom: '1px solid #22170F' }}>
       <div className="container-custom">
         
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 4rem auto' }}>
           <div className="section-tag" style={{ justifyContent: 'center' }}>
             <span>Técnica & Calidad Certificada</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 4vw, 2.75rem)', color: '#3A1A0E', marginBottom: '1rem', fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 4vw, 2.75rem)', color: '#FFFFFF', marginBottom: '1rem', fontFamily: "'Playfair Display', Georgia, serif" }}>
             El Secreto Detrás de Muebles Inalterables
           </h2>
-          <p style={{ color: '#595148', fontSize: '1.05rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#DCD2C6', fontSize: '1.05rem', lineHeight: 1.6 }}>
             En <strong>Maderas Melgar</strong>, combinamos la tradición ebanista con procesos térmicos de precisión. No trabajamos aglomerados ni contrachapados sintéticos.
           </p>
         </div>
@@ -58,10 +58,10 @@ export const CraftsmanshipSection: React.FC = () => {
               <div 
                 key={step.number}
                 style={{
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#1A110B',
                   padding: '2rem',
                   borderRadius: '16px',
-                  border: '1px solid #E5DCCB',
+                  border: '1px solid #3A2A1A',
                   boxShadow: '0 4px 20px rgba(58, 26, 14, 0.04)',
                   display: 'flex',
                   flexDirection: 'column'
@@ -77,8 +77,8 @@ export const CraftsmanshipSection: React.FC = () => {
                     width: '48px',
                     height: '48px',
                     borderRadius: '12px',
-                    backgroundColor: '#FAF5ED',
-                    color: '#3A1A0E',
+                    backgroundColor: '#22170F',
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -90,11 +90,11 @@ export const CraftsmanshipSection: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.15rem', color: '#3A1A0E', marginBottom: '0.75rem', fontWeight: 700 }}>
+                <h3 style={{ fontSize: '1.15rem', color: '#FFFFFF', marginBottom: '0.75rem', fontWeight: 700 }}>
                   {step.title}
                 </h3>
 
-                <p style={{ fontSize: '0.9rem', color: '#595148', lineHeight: 1.65, flexGrow: 1 }}>
+                <p style={{ fontSize: '0.9rem', color: '#DCD2C6', lineHeight: 1.65, flexGrow: 1 }}>
                   {step.desc}
                 </p>
               </div>

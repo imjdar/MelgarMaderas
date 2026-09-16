@@ -6,7 +6,7 @@
 export interface Product {
   id: string;
   name: string;
-  category: 'sala' | 'comedor' | 'habitaciones' | 'cocina' | 'estudio';
+  category: 'sala' | 'comedor' | 'habitaciones' | 'cocina' | 'estudio' | 'complementos';
   categoryLabel: string;
   image: string;
   shortDesc: string;
@@ -14,6 +14,14 @@ export interface Product {
   material: string;
   dimensions: string;
   features: string[];
+  collectionId?: string;
+}
+
+export interface ProductCollection {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
 }
 
 export interface Category {

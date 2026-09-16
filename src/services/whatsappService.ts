@@ -17,10 +17,10 @@ export const buildWhatsAppUrl = (
   const cleanedPhone = phoneToUse ? phoneToUse.replace(/[^0-9]/g, '') : '';
   const domain = APP_CONFIG.domain;
 
-  let textContent = `Hola Maderas Melgar 👋, escribo desde el portal oficial (${domain}).`;
+  let textContent = `HABLEMOS DE TU ESPACIO`;
 
   if (productName) {
-    textContent += ` Me interesa solicitar una cotización del mueble "*${productName}*" fabricado a medida.`;
+    textContent += `\n\nMe interesa solicitar una cotización del mueble "*${productName}*" fabricado a medida.`;
   }
 
   if (customMsg) {

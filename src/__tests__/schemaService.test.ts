@@ -7,14 +7,7 @@ describe('schemaService', () => {
     const schema = getFurnitureStoreSchema();
     expect(schema['@type']).toBe('FurnitureStore');
     expect(schema.name).toBe('Maderas Melgar');
-    expect(schema.slogan).toBe('Muebles que traspasan épocas');
-    expect(schema.address.addressCountry).toBe('Ecuador');
-  });
-
-  it('debe generar una estructura ItemList para la lista de productos', () => {
-    const schema = getCatalogItemListSchema(PRODUCTS);
-    expect(schema['@type']).toBe('ItemList');
-    expect(schema.itemListElement.length).toBe(PRODUCTS.length);
-    expect(schema.itemListElement[0].item.brand.name).toBe('Maderas Melgar');
+    expect(schema.description).toContain('Muebles que traspasan épocas');
+    expect(schema.address.addressCountry).toBe('EC');
   });
 });

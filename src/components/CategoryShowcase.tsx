@@ -1,0 +1,81 @@
+'use client';
+import React from 'react';
+import { WatermarkImage } from './WatermarkImage';
+import { ArrowRight } from 'lucide-react';
+
+const categories = [
+  {
+    id: 'salas',
+    title: 'Salas',
+    description: 'Espacios diseñados para el confort y la convivencia. Fabricados en roble y laurel del oriente, garantizando una estructura de madera sólida con tapices de alta costura.',
+    image: '/assets/products/sala-fiorella.jpeg',
+    reverse: false
+  },
+  {
+    id: 'comedores',
+    title: 'Comedores',
+    description: 'El corazón del hogar. Mesas macizas en Seike tratadas térmicamente, diseñadas para reunir a la familia por generaciones. Acabado lacado brillante y mate.',
+    image: '/assets/products/comedor-coral.jpeg',
+    reverse: true
+  },
+  {
+    id: 'dormitorios',
+    title: 'Dormitorios',
+    description: 'Santuarios de descanso. Diseños ergonómicos y cálidos, combinando tableros maderados texturizados con estructuras robustas para un soporte perfecto.',
+    image: '/assets/products/dormitorio-roma.jpeg',
+    reverse: false
+  }
+];
+
+export function CategoryShowcase() {
+  return (
+    <section id="colecciones" className="py-24 bg-[#FAFAFA] dark:bg-[#120C08] text-gray-900 dark:text-white transition-colors duration-500">
+      <div className="max-w-[1500px] mx-auto px-6 md:px-12">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+            Productos
+          </h2>
+          <p className="text-sm tracking-widest uppercase text-[#C59B27]">Colección de piezas versátiles que se pueden combinar</p>
+        </div>
+
+        <div className="space-y-32">
+          {categories.map((cat, idx) => (
+            <div 
+              key={cat.id} 
+              id={cat.id}
+              className={`flex flex-col md:flex-row items-center gap-12 lg:gap-24 ${cat.reverse ? 'md:flex-row-reverse' : ''}`}
+            >
+              {/* Image Block */}
+              <div className="w-full md:w-3/5 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-transparent">
+                  <WatermarkImage
+                    src={cat.image}
+                    alt={cat.title}
+                    className="w-full h-full"
+                    imageClassName="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+                  />
+              </div>
+
+              {/* Text Block */}
+              <div className="w-full md:w-2/5 flex flex-col justify-center">
+                <h3 className="text-4xl lg:text-5xl font-light mb-6" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+                  {cat.title}
+                </h3>
+                <p className="text-black dark:text-white leading-relaxed mb-8 font-light text-lg drop-shadow-sm">
+                  {cat.description}
+                </p>
+                
+                <a 
+                  className="group flex items-center gap-3 text-sm font-medium uppercase tracking-widest text-[#C59B27] w-max hover:text-gray-900 dark:hover:text-white transition-colors"
+                  href="/productos"
+                >
+                  Ver Catálogo
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
