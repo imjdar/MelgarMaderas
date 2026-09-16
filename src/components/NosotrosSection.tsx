@@ -1,117 +1,174 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { WatermarkImage } from './WatermarkImage';
 
 export function NosotrosSection() {
   return (
-    <section id="nosotros" className="relative min-h-screen flex items-center overflow-hidden">
+    <div className="w-full bg-white dark:bg-[#120C08] text-gray-900 dark:text-gray-100 transition-colors duration-500">
       
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
-        <WatermarkImage
-          src="/assets/products/comedor-artesanal.jpg"
-          alt="Maderas Melgar - Diseño Interior"
-          className="w-full h-full"
-          imageClassName="object-cover scale-105 blur-[6px]"
-        />
-        <div className="absolute inset-0 bg-[#1A110B]/80"></div>
-      </div>
+      {/* 1. HERO SECTION (Lo que nos mueve / Misión) */}
+      <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <WatermarkImage
+            src="/assets/products/comedor-artesanal.jpg"
+            alt="Maderas Melgar - Diseño Interior"
+            className="w-full h-full"
+            imageClassName="object-cover scale-105 blur-[2px] opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white dark:from-[#120C08]/90 dark:via-[#120C08]/80 dark:to-[#120C08]"></div>
+        </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 w-full">
-        
-        <div className="flex flex-col gap-16 items-center text-center">
-          
-          {/* Header */}
-          <div className="w-full text-white max-w-3xl">
-            <span className="text-[#C59B27] text-sm font-bold tracking-[0.2em] uppercase mb-6 block">
-              Maderas Melgar
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center mt-20">
+          <span className="text-[#C59B27] text-sm font-bold tracking-[0.3em] uppercase mb-6 block drop-shadow-md">
+            Lo que nos mueve
+          </span>
+          <h1 className="text-5xl md:text-7xl font-light mb-8 leading-tight italic text-black dark:text-white drop-shadow-sm" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+            &quot;Hay muebles que llenan un espacio.<br/>Y hay muebles que terminan formando parte de una historia&quot;
+          </h1>
+          <p className="text-black dark:text-white font-medium leading-relaxed text-xl md:text-2xl max-w-3xl mx-auto drop-shadow-sm">
+            Diseñamos y fabricamos muebles que combinan materiales nobles, oficio y diseño para crear espacios cálidos, funcionales y atemporales.
+          </p>
+          <div className="w-24 h-[1px] bg-[#C59B27] mt-12 mx-auto"></div>
+        </div>
+      </section>
+
+      {/* 2. TIMELINE: DESDE 1996 (Image Right) */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Blur */}
+        <div className="absolute inset-0 z-0">
+          <WatermarkImage
+            src="/assets/nosotros/Nosotros1.jpg"
+            alt="Fondo"
+            className="w-full h-full opacity-10"
+            imageClassName="object-cover scale-110 blur-[16px]"
+          />
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+            <span className="text-[#C59B27] text-sm font-bold tracking-[0.2em] uppercase mb-4 block">
+              Desde 1996
             </span>
-            <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight italic" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-              &quot;Hay muebles que llenan un espacio.<br/>Y hay muebles que terminan formando parte de una historia&quot;
+            <h2 className="text-4xl md:text-5xl font-light mb-6 text-black dark:text-white" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+              Una historia construida en madera.
             </h2>
-            <p className="text-gray-300 font-light leading-relaxed text-xl">
-              Desde 1996 transformamos maderas seleccionadas en piezas pensadas para acompañar la vida de quienes las habitan.
-            </p>
-            <div className="w-24 h-[1px] bg-[#C59B27] mt-12 mx-auto"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left w-full mt-8">
-            {/* DESDE 1996 */}
-            <div className="text-white">
-              <h3 className="text-3xl font-light mb-4 text-[#C59B27]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-                Desde 1996
-              </h3>
-              <h4 className="text-xl font-medium mb-4 text-white">Una historia construida en madera.</h4>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
+            <div className="space-y-6 text-black dark:text-gray-100 font-medium text-lg leading-relaxed">
+              <p>
                 Todo comenzó con un sueño, transformar la madera, un material noble y lleno de vida, en piezas capaces de convertirse en parte de la historia de un hogar.
               </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
+              <p>
                 Desde nuestros primeros muebles, fuimos construyendo algo que iba mucho más allá de un producto: una forma de trabajar basada en el cuidado por cada detalle, el compromiso y la calidad.
               </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg">
+              <p className="text-black dark:text-white italic font-semibold">
                 Con el tiempo, ese sueño creció.
               </p>
             </div>
+          </div>
+          <div className="w-full lg:w-1/2 relative h-[500px] md:h-[600px]">
+            <div className="absolute inset-0 bg-[#C59B27]/10 translate-x-4 translate-y-4 rounded-lg"></div>
+            <Image 
+              src="/assets/nosotros/Nosotros1.jpg" 
+              alt="Taller Maderas Melgar 1996" 
+              fill 
+              className="object-cover rounded-lg shadow-2xl relative z-10"
+            />
+          </div>
+        </div>
+        </div>
+      </section>
 
-            {/* LOS PRIMEROS AÑOS */}
-            <div className="text-white">
-              <h3 className="text-3xl font-light mb-4 text-[#C59B27]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-                Los Primeros Años
-              </h3>
-              <h4 className="text-xl font-medium mb-4 text-white">Todo gran proyecto comienza con una idea.</h4>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
-                Nuestros primeros muebles nacieron de la pasión por transformar la madera y del deseo de crear piezas diferentes.
-              </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
-                La respuesta de nuestros clientes nos impulsó a seguir creciendo. Lo que comenzó en un pequeño local se convirtió en nuestro propio espacio de producción, permitiéndonos ampliar nuestro trabajo y generar oportunidades para más personas en Ecuador.
-              </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg">
-                Cada pieza nos enseñó algo nuevo.<br/>Cada cliente nos dio una razón para continuar.
-              </p>
+      {/* 3. TIMELINE: LOS PRIMEROS AÑOS & EVOLUCION (Image Left) */}
+      <section className="py-24 bg-[#FAFAFA] dark:bg-[#1A110B] relative overflow-hidden border-y border-gray-100 dark:border-[#22170F]">
+        {/* Background Blur */}
+        <div className="absolute inset-0 z-0">
+          <WatermarkImage
+            src="/assets/nosotros/Nosotros2.jpg"
+            alt="Fondo"
+            className="w-full h-full opacity-10"
+            imageClassName="object-cover scale-110 blur-[16px]"
+          />
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <span className="text-[#C59B27] text-sm font-bold tracking-[0.2em] uppercase mb-4 block">
+                Los Primeros Años & Evolución
+              </span>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 text-black dark:text-white" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+                Todo gran proyecto comienza con una idea.
+              </h2>
+              <div className="space-y-6 text-black dark:text-gray-100 font-medium text-lg leading-relaxed">
+                <p>
+                  Nuestros primeros muebles nacieron de la pasión por transformar la madera y del deseo de crear piezas diferentes. La respuesta de nuestros clientes nos impulsó a seguir creciendo. Lo que comenzó en un pequeño local se convirtió en nuestro propio espacio de producción.
+                </p>
+                <p>
+                  Con los años, nuestro oficio evolucionó junto con nosotros. Seleccionamos cuidadosamente cada material para encontrar el equilibrio entre diseño, resistencia, textura y confort. Trabajamos con maderas sólidas como laurel negro del Oriente, seike, manzano colorado y roble.
+                </p>
+                <p className="text-black dark:text-white font-semibold italic border-l-2 border-[#C59B27] pl-4">
+                  "No elegimos un material únicamente por cómo se ve, Elegimos cómo queremos que se sienta."
+                </p>
+              </div>
             </div>
-
-            {/* EVOLUCIÓN */}
-            <div className="text-white">
-              <h3 className="text-3xl font-light mb-4 text-[#C59B27]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-                Evolución
-              </h3>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
-                Con los años, nuestro oficio evolucionó junto con nosotros. Seleccionamos cuidadosamente cada material para encontrar el equilibrio entre diseño, resistencia, textura y confort.
-              </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
-                Trabajamos con maderas sólidas como laurel negro del Oriente, seike, manzano colorado y roble, acompañadas de textiles y tapices seleccionados como antifluido, chenil, microfibra y microcuero.
-              </p>
-              <p className="text-white font-medium leading-relaxed text-lg italic">
-                No elegimos un material únicamente por cómo se ve, Elegimos cómo queremos que se sienta.
-              </p>
+            <div className="w-full lg:w-1/2 relative h-[500px] md:h-[600px]">
+              <div className="absolute inset-0 bg-[#C59B27]/10 -translate-x-4 translate-y-4 rounded-lg"></div>
+              <Image 
+                src="/assets/nosotros/Nosotros2.jpg" 
+                alt="Evolución Maderas Melgar" 
+                fill 
+                className="object-cover rounded-lg shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
+              />
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* HOY */}
-            <div className="text-white">
-              <h3 className="text-3xl font-light mb-4 text-[#C59B27]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-                Hoy
-              </h3>
-              <h4 className="text-xl font-medium mb-4 text-white">Una marca que sigue creciendo sin olvidar de dónde viene.</h4>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
+      {/* 4. TIMELINE: HOY (Image Right) */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Blur */}
+        <div className="absolute inset-0 z-0">
+          <WatermarkImage
+            src="/assets/nosotros/Nosotros3.png"
+            alt="Fondo"
+            className="w-full h-full opacity-10"
+            imageClassName="object-cover scale-110 blur-[16px]"
+          />
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+            <span className="text-[#C59B27] text-sm font-bold tracking-[0.2em] uppercase mb-4 block">
+              Hoy
+            </span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 text-black dark:text-white" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+              Una marca que sigue creciendo sin olvidar de dónde viene.
+            </h2>
+            <div className="space-y-6 text-black dark:text-gray-100 font-medium text-lg leading-relaxed">
+              <p>
                 Hoy, Maderas Melgar es una empresa ecuatoriana que ha construido su camino alrededor de una pasión que permanece intacta: crear muebles que transformen los espacios y hagan de ellos algo propio.
               </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg mb-4">
-                Somos una PYME que ha crecido gracias al trabajo, la confianza de nuestros clientes y las manos de quienes hacen posible cada pieza. Nuestra historia está presente en cada hogar que hemos ayudado a transformar, en cada espacio que hemos vestido y en cada mueble que ha encontrado un lugar en la vida de alguien.
+              <p>
+                Somos una PYME que ha crecido gracias al trabajo, la confianza de nuestros clientes y las manos de quienes hacen posible cada pieza. Nuestra historia está presente en cada hogar que hemos ayudado a transformar.
               </p>
-              <p className="text-gray-300 font-light leading-relaxed text-lg">
-                30 años después, seguimos haciendo lo que nos inspira desde el principio: <strong>Transformar madera en espacios que cuentan historias.</strong>
+              <p className="text-black dark:text-white font-semibold">
+                30 años después, seguimos haciendo lo que nos inspira desde el principio: <br/>
+                <span className="text-[#C59B27] italic text-2xl mt-4 block" style={{ fontFamily: '"Cormorant Garamond", serif' }}>Transformar madera en espacios que cuentan historias.</span>
               </p>
             </div>
           </div>
-          
-          <div className="w-full text-center mt-12 p-8 border border-[#C59B27]/30 bg-black/20 rounded-lg backdrop-blur-sm">
-            <p className="text-[#E5DCCB] text-xl md:text-2xl font-light tracking-wide" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-              NUESTRAS INSTALACIONES Y EQUIPO NOS PERMITEN REALIZAR PROYECTOS PERSONALIZADOS.
-            </p>
+          <div className="w-full lg:w-1/2 relative h-[250px] md:h-[300px]">
+            <div className="absolute inset-0 bg-[#C59B27]/10 translate-x-4 -translate-y-4 rounded-lg"></div>
+            <Image 
+              src="/assets/nosotros/Nosotros3.png" 
+              alt="Maderas Melgar Hoy" 
+              fill 
+              className="object-contain rounded-lg shadow-2xl relative z-10"
+            />
           </div>
-
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+
+    </div>
   );
 }

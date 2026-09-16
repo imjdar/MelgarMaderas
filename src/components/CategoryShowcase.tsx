@@ -29,7 +29,7 @@ const categories = [
 
 export function CategoryShowcase() {
   return (
-    <section id="colecciones" className="py-24 bg-[#120C08] text-white">
+    <section id="colecciones" className="py-24 bg-[#FAFAFA] dark:bg-[#120C08] text-gray-900 dark:text-white transition-colors duration-500">
       <div className="max-w-[1500px] mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
@@ -60,12 +60,12 @@ export function CategoryShowcase() {
                 <h3 className="text-4xl lg:text-5xl font-light mb-6" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
                   {cat.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-8 font-light text-lg">
+                <p className="text-black dark:text-white leading-relaxed mb-8 font-light text-lg drop-shadow-sm">
                   {cat.description}
                 </p>
                 
                 <a 
-                  className="group flex items-center gap-3 text-sm font-medium uppercase tracking-widest text-[#C59B27] w-max hover:text-white transition-colors"
+                  className="group flex items-center gap-3 text-sm font-medium uppercase tracking-widest text-[#C59B27] w-max hover:text-gray-900 dark:hover:text-white transition-colors"
                   href="/productos"
                 >
                   Ver Catálogo

@@ -3,6 +3,7 @@ import './globals.css';
 import { getFurnitureStoreSchema } from '@/services/schemaService';
 
 import { ClientLayout } from '@/components/ClientLayout';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://maderasmelgar.com.ec'),
@@ -52,7 +53,7 @@ export default function RootLayout({
   const jsonLd = getFurnitureStoreSchema();
 
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -65,10 +66,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+      <body className="bg-[#FAFAFA] dark:bg-[#120C08] text-gray-900 dark:text-gray-100 transition-colors duration-500">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

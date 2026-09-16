@@ -56,8 +56,6 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#120C08',
-          color: '#FFFFFF',
         }}
       >
         <LuxuryNavbar 

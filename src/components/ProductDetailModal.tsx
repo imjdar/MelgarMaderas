@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { X, Check } from 'lucide-react';
 import { Product } from '@/types';
 import { WatermarkImage } from './WatermarkImage';
+import { PRODUCT_COLLECTIONS } from '@/data/products';
 
 interface ProductDetailModalProps {
   product: Product;
@@ -54,7 +55,7 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
             src={product.image}
             alt={product.name}
             className="w-full h-full"
-            imageClassName="object-cover grayscale contrast-125 bg-[#120C08]"
+            imageClassName="object-cover bg-[#120C08]"
           />
         </div>
 
@@ -82,7 +83,9 @@ export function ProductDetailModal({ product, isOpen, onClose, onAddToCart, inCa
             {/* Si existieran dimensiones, se podrían agregar aquí */}
             <div className="flex justify-between border-b border-[#3A2A1A] pb-2">
               <span className="text-gray-400 uppercase tracking-wider text-xs">Colección</span>
-              <span className="font-medium">Editorial {new Date().getFullYear()}</span>
+              <span className="font-medium text-right max-w-[60%]">
+                {PRODUCT_COLLECTIONS.find(c => c.id === product.collectionId)?.title || `Editorial ${new Date().getFullYear()}`}
+              </span>
             </div>
           </div>
 
