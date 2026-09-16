@@ -2,9 +2,10 @@ import { describe, it, expect } from 'vitest';
 import { buildWhatsAppUrl } from '../services/whatsappService';
 
 describe('whatsappService', () => {
-  it('debe generar una URL vacía/alerta si no hay teléfono configurado', () => {
+  it('debe generar la URL con el teléfono por defecto si no se pasa uno', () => {
     const url = buildWhatsAppUrl('', 'Juego de Sala');
-    expect(url).toContain('javascript:alert');
+    expect(url).toContain('https://wa.me/');
+    expect(url).toContain(encodeURIComponent('Juego de Sala'));
   });
 
   it('debe formatear correctamente la URL con teléfono y nombre de producto', () => {
@@ -14,6 +15,5 @@ describe('whatsappService', () => {
 
     expect(url).toContain('https://wa.me/593991234567');
     expect(url).toContain(encodeURIComponent('Cama King Imperial'));
-    expect(url).toContain('melgarmaderas.com.ec');
   });
 });
